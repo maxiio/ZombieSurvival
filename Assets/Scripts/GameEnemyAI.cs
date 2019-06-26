@@ -44,7 +44,15 @@ public class GameEnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
-        print("EXTERMINATE!!!");
+        Renderer rend = GetComponent<Renderer>();
+        //Set the main Color of the Material to green
+        rend.material.shader = Shader.Find("_Color");
+        rend.material.SetColor("_Color", Color.green);
+
+                //Find the Specular shader and change its Color to red
+        rend.material.shader = Shader.Find("Specular");
+        rend.material.SetColor("_SpecColor", Color.red);
+
     }
 
     private void ChaseTarget()
