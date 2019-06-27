@@ -437,11 +437,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4019400393627568317}
     m_Modifications:
-    - target: {fileID: 6702741909767606731, guid: e8ba71ec3ee3a4c0e955ce761616a541,
-        type: 3}
-      propertyPath: m_Name
-      value: Muzzle Flash
-      objectReference: {fileID: 0}
     - target: {fileID: 6493770513788485484, guid: e8ba71ec3ee3a4c0e955ce761616a541,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -497,6 +492,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6702741909767606731, guid: e8ba71ec3ee3a4c0e955ce761616a541,
+        type: 3}
+      propertyPath: m_Name
+      value: Muzzle Flash
+      objectReference: {fileID: 0}
     - target: {fileID: 961574739544794952, guid: e8ba71ec3ee3a4c0e955ce761616a541,
         type: 3}
       propertyPath: lengthInSec
@@ -506,6 +506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961574739544794952, guid: e8ba71ec3ee3a4c0e955ce761616a541,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3004437345548931677, guid: e8ba71ec3ee3a4c0e955ce761616a541,
         type: 3}
