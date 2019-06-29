@@ -12,7 +12,10 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        
+    //Camera.GetComponent(AudioListener).enabled = false;
+    var listener = GameObject.FindObjectOfType<AudioListener>();
+    listener.enabled = false;
+    
     }
 
     void Update()
