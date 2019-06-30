@@ -13,11 +13,20 @@ public class Weapon : MonoBehaviour
     void Start()
     {
     //Camera.GetComponent(AudioListener).enabled = false;
+    print("AudioListeners " + Resources.FindObjectsOfTypeAll(typeof(AudioListener)).Length);
+
+        foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[]) {
+            print("GameObject: " + go.name );
+
+        }
+        int count = Camera.allCameras.Length;
+        print("We've got " + count + " cameras");
+    
+
     var listener = GameObject.FindObjectOfType<AudioListener>();
     listener.enabled = false;
-    
-    }
 
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) {
