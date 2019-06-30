@@ -12,20 +12,7 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-    //Camera.GetComponent(AudioListener).enabled = false;
-    print("AudioListeners " + Resources.FindObjectsOfTypeAll(typeof(AudioListener)).Length);
-
-        foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[]) {
-            print("GameObject: " + go.name );
-
-        }
-        int count = Camera.allCameras.Length;
-        print("We've got " + count + " cameras");
-    
-
-    var listener = GameObject.FindObjectOfType<AudioListener>();
-    listener.enabled = false;
-
+        
     }
     void Update()
     {
@@ -45,7 +32,7 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         bool didHit = Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range);
         if (didHit) {
-            print("Hit " + hit.transform.name);
+            //print("Hit " + hit.transform.name);
             // TODO: add hit effeect
             //todo: call method on enemy health
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
