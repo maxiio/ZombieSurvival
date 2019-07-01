@@ -9,10 +9,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 10f;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject hitImpact;
 
     void Start()
     {
-        
+
     }
     void Update()
     {
@@ -35,6 +36,7 @@ public class Weapon : MonoBehaviour
             //print("Hit " + hit.transform.name);
             // TODO: add hit effeect
             //todo: call method on enemy health
+            CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) { return; } 
             target.TakeDamage(damage);
@@ -42,5 +44,11 @@ public class Weapon : MonoBehaviour
         } else {
             return;
         }
+    }
+
+    private void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitImpact, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, 1);
     }
 }
