@@ -677,7 +677,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.7572979, g: 0.743147, b: 0.9433962, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2484,27 +2484,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2605663799865821324, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 657358901818503381, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: hitImpact
-      value: 
-      objectReference: {fileID: 5057279154576973091, guid: 94fdb4e2e4c314b88a912fa9994796c9,
-        type: 3}
-    - target: {fileID: 2059302142751278434, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_Name
-      value: SonicThingy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3633635547430769010, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_Name
-      value: GreenZap_VFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c027e38693f49418861f5db139b0b0, type: 3}

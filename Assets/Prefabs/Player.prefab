@@ -16,6 +16,8 @@ MonoBehaviour:
   range: 100
   damage: 10
   muzzleFlash: {fileID: 3633635547416173622}
+  hitImpact: {fileID: 5057279154576973091, guid: 94fdb4e2e4c314b88a912fa9994796c9,
+    type: 3}
 --- !u!1 &2605663799870674568
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +103,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2605663799870674568}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &2605663799877739370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 102122, guid: 153f3e43b3732374b885d0cc2773ae05, type: 3}
       propertyPath: m_Name
-      value: Zap
+      value: GreenZap_VFX
       objectReference: {fileID: 0}
     - target: {fileID: 467804, guid: 153f3e43b3732374b885d0cc2773ae05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -516,7 +518,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: a353356c4e6e747c89a436f4838567ce,
         type: 3}
       propertyPath: m_Name
-      value: Screwdriver
+      value: SonicThingy
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a353356c4e6e747c89a436f4838567ce,
         type: 3}
