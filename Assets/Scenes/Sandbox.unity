@@ -2559,5 +2559,35 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1446701109}
+    - target: {fileID: 4535290531964322246, guid: 431f7c6811bed4a1ea576488f567a919,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f747dd0256ac44b45af617afc9f947e1, type: 2}
+    - target: {fileID: 4535290531964322264, guid: 431f7c6811bed4a1ea576488f567a919,
+        type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535290531964322264, guid: 431f7c6811bed4a1ea576488f567a919,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628903876020476914, guid: 431f7c6811bed4a1ea576488f567a919,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.47799078
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628903876020476914, guid: 431f7c6811bed4a1ea576488f567a919,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15227
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628903876020476914, guid: 431f7c6811bed4a1ea576488f567a919,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15227
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431f7c6811bed4a1ea576488f567a919, type: 3}

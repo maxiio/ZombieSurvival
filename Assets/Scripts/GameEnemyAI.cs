@@ -11,6 +11,7 @@ public class GameEnemyAI : MonoBehaviour
     [SerializeField] float chaseRange = 5.0f;
 
     bool isProvoked = false;
+    bool isAttacking = false;
 
     NavMeshAgent navMeshAgent;
     
@@ -44,19 +45,15 @@ public class GameEnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
-        Renderer rend = GetComponent<Renderer>();
-        //Set the main Color of the Material to green
-        rend.material.shader = Shader.Find("_Color");
-        rend.material.SetColor("_Color", Color.green);
-
-                //Find the Specular shader and change its Color to red
-        rend.material.shader = Shader.Find("Specular");
-        rend.material.SetColor("_SpecColor", Color.red);
-
+        isAttacking = true;
+        GetComponent<Animator>().SetBool("attack", true);
     }
 
     private void ChaseTarget()
     {
+        isAttacking = false;
+        GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
 
     }
