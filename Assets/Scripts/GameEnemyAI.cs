@@ -29,10 +29,26 @@ public class GameEnemyAI : MonoBehaviour
         if (isProvoked) {
             EngageTarget();
         } else if (distanceToTarget <= chaseRange) {
+            if (isPlayerVisible() == true) {
             isProvoked = true;
+            }
         }
     }
 
+    public bool isPlayerVisible() {
+        Vector3 direction = target.position - transform.position;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, direction, out hit)){
+            PlayerHealth player = hit.transform.GetComponent<PlayerHealth>();
+            if (player == null) { return false; }
+        }
+        return true;
+    }
+
+    public void OnDamageTaken()
+    {
+        isProvoked = true;
+    }
     private void EngageTarget()
     {   
         FaceTarget();

@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
-    // create public method to reduce hit points by the ammount of damage
 
     public void TakeDamage(float damageAmmount) {
+        BroadcastMessage("OnDamageTaken"); //STRING REFERENCE
         hitPoints -= damageAmmount;
         print("hit points: " + hitPoints);
         if (hitPoints <= 0) {
@@ -15,5 +15,4 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

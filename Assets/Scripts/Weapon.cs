@@ -33,9 +33,6 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         bool didHit = Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range);
         if (didHit) {
-            //print("Hit " + hit.transform.name);
-            // TODO: add hit effeect
-            //todo: call method on enemy health
             CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) { return; } 
