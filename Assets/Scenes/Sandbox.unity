@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1489285, g: 0.19571182, b: 0.24253589, a: 1}
+  m_IndirectSpecularColor: {r: 0.447015, g: 0.49690664, b: 0.57506704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1639,7 +1639,7 @@ GameObject:
   - component: {fileID: 1035878502}
   - component: {fileID: 1035878501}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: GameOverCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1952,6 +1952,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 290029450}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1159232136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2605663799870674570, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159232137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159232136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a691e8267849dfb0f76441c78a3e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 1035878503}
 --- !u!4 &1254214224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 44884af1ac1d64d42902da40268ba120,
@@ -2093,7 +2112,7 @@ GameObject:
   - component: {fileID: 1333059493}
   - component: {fileID: 1333059492}
   m_Layer: 0
-  m_Name: Gun Reticle Canvas
+  m_Name: GunReticleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

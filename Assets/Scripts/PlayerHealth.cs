@@ -7,11 +7,12 @@ public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] float health = 100f;
+    DeathHandler playerDeath;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -35,5 +36,6 @@ public class PlayerHealth : MonoBehaviour
     private void KillPlayer()
     {
         Debug.Log("Player has died");
+        GetComponent<DeathHandler>().HandleDeath();
     }
 }
