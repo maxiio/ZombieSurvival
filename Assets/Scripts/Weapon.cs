@@ -11,15 +11,27 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitImpact;
 
+    [SerializeField] Ammo ammoSlot;
+
     void Start()
     {
 
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
+        FireWeapon();
+    }
+
+    private void FireWeapon()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("ammo count = " + ammoSlot.GetAmmoCount());
+            if (ammoSlot.GetAmmoCount() > 0) {
             PlayMuzzleFlash();
             ProcessRaycast();
+            ammoSlot.ReduceAmmo();
+            }
         }
     }
 
