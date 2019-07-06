@@ -28,9 +28,9 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("ammo count = " + ammoSlot.GetAmmoCount());
             if (ammoSlot.GetAmmoCount() > 0) {
-            PlayMuzzleFlash();
-            ProcessRaycast();
-            ammoSlot.ReduceAmmo();
+                PlayMuzzleFlash();
+                ProcessRaycast();
+                ammoSlot.ReduceAmmo();
             }
         }
     }

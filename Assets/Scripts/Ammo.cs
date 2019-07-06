@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
 
-    [SerializeField] int ammoCount = 10;
+    [SerializeField] int ammoCount = 16;
 
     public int GetAmmoCount()
     {
