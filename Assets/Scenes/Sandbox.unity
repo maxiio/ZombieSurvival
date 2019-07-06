@@ -5983,6 +5983,26 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1035878503}
+    - target: {fileID: 7419344537868559251, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419344537868559251, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307017689883593718, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712462445384636052, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
 --- !u!1001 &4535290532065319927
