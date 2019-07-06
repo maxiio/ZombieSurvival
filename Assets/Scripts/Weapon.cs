@@ -13,10 +13,6 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] Ammo ammoSlot;
 
-    void Start()
-    {
-
-    }
     void Update()
     {
         FireWeapon();
@@ -49,7 +45,6 @@ public class Weapon : MonoBehaviour
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) { return; } 
             target.TakeDamage(damage);
-
         } else {
             return;
         }
