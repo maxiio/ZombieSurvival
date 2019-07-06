@@ -5859,8 +5859,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21f5100689ad4b42b592fb62fda4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomIn: 20
-  zoomOut: 60
+  zoomInFOV: 20
+  zoomOutFOV: 60
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
   fpsCamera: {fileID: 2135346242}
 --- !u!1001 &2094832278
 PrefabInstance:
