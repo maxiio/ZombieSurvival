@@ -13,15 +13,12 @@ public class WeaponZoomer : MonoBehaviour
 
     [SerializeField] Camera fpsCamera;
 
-    RigidbodyFirstPersonController fpsController;
+    [SerializeField] RigidbodyFirstPersonController fpsController;
+    
     
 
     bool ZoomedInSwitch = false;
 
-    private void Start() 
-    {
-        fpsController = GetComponent<RigidbodyFirstPersonController>();
-    }
     // Update is called once per frame
     void Update()
     {

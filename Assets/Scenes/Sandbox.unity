@@ -674,6 +674,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 197052497}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &271210092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2605663799877739368, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &290029450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2232,6 +2244,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b321aed21e0872743a175d8dbbe12ac8,
     type: 3}
   m_PrefabInstance: {fileID: 1498226560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &797303953 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2605663799872443564, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809453177
 PrefabInstance:
@@ -5841,6 +5859,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2062837342}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2063052618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9202522832746802523, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063052621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063052618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21f5100689ad4b42b592fb62fda4bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomInFOV: 20
+  zoomOutFOV: 60
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
+  fpsCamera: {fileID: 797303953}
+  fpsController: {fileID: 271210092}
 --- !u!1001 &2094832278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6006,6 +6048,21 @@ PrefabInstance:
     - target: {fileID: 2063645492, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
       propertyPath: ammoCount
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648521126798414562, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 271210092}
+    - target: {fileID: 9096016099034358813, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 271210092}
+    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: timeeBetweenShots
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
