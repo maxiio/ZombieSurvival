@@ -344,7 +344,7 @@ MonoBehaviour:
     ForwardSpeed: 6
     BackwardSpeed: 4
     StrafeSpeed: 4
-    RunMultiplier: 3
+    RunMultiplier: 2
     RunKey: 304
     JumpForce: 50
     SlopeCurveModifier:
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f01fadfd98049c19cdfd71aff99d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCount: 10
+  ammoCount: 16
 --- !u!114 &2422769219169102804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,9 +448,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 2605663799872443564}
-  range: 100
-  damage: 10
-  timeeBetweenShots: 3
+  range: 25
+  damage: 50
+  timeeBetweenShots: 1
   muzzleFlash: {fileID: 8837012693781578972}
   hitImpact: {fileID: 5057279154576973091, guid: 94fdb4e2e4c314b88a912fa9994796c9,
     type: 3}
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 2605663799872443564}
-  range: 100
-  damage: 10
-  timeeBetweenShots: 0.5
+  range: 35
+  damage: 20
+  timeeBetweenShots: 0.25
   muzzleFlash: {fileID: 8837012693781578972}
   hitImpact: {fileID: 5057279154576973091, guid: 94fdb4e2e4c314b88a912fa9994796c9,
     type: 3}
@@ -527,7 +527,7 @@ MonoBehaviour:
   zoomOutSensitivity: 2
   zoomInSensitivity: 0.5
   fpsCamera: {fileID: 2605663799872443564}
-  fpsController: {fileID: 0}
+  fpsController: {fileID: 2605663799877739368}
 --- !u!114 &253161199942579913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 2605663799872443564}
-  range: 100
+  range: 50
   damage: 10
   timeeBetweenShots: 0.5
   muzzleFlash: {fileID: 8837012693781578972}
@@ -565,7 +565,7 @@ MonoBehaviour:
   zoomOutSensitivity: 2
   zoomInSensitivity: 0.5
   fpsCamera: {fileID: 2605663799872443564}
-  fpsController: {fileID: 0}
+  fpsController: {fileID: 2605663799877739368}
 --- !u!114 &4946599779230072705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,8 +597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 2605663799872443564}
-  range: 100
-  damage: 10
+  range: 50
+  damage: 15
   timeeBetweenShots: 0.5
   muzzleFlash: {fileID: 8837012693781578972}
   hitImpact: {fileID: 5057279154576973091, guid: 94fdb4e2e4c314b88a912fa9994796c9,
@@ -670,21 +670,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.195
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356619699027262854, guid: d0351a6eba5686f46830124c6c2252a2,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356619699027262854, guid: d0351a6eba5686f46830124c6c2252a2,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356619699027262854, guid: d0351a6eba5686f46830124c6c2252a2,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0351a6eba5686f46830124c6c2252a2, type: 3}
