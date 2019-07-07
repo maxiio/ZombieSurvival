@@ -35,6 +35,72 @@ public class WeaponSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int previousWeapon = currentWeapon;
+
+        ProcessKeyInput();
+        ProcessScrollWheel();
+
+        if (previousWeapon != currentWeapon)
+        {
+            SetActiveWeapon();
+        }
+
+    }
+
+    private void ProcessKeyInput()
+    {
+        //todo: make this a circular buffer
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentWeapon = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeapon = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentWeapon = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            currentWeapon = 3;
+        }
+    }
+
+    private void ProcessScrollWheel()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0) // back
+        {
+            CycleForward();
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0) // fwd
+        {
+            CycleBackward();
+        }
+    }
+
+    private void CycleBackward()
+    {
+        if (currentWeapon == 0)
+        {
+            currentWeapon = transform.childCount - 1;
+        }
+        else
+        {
+            currentWeapon--;
+        }
+    }
+
+    private void CycleForward()
+    {
+        if (currentWeapon >= transform.childCount - 1)
+        {
+            currentWeapon = 0;
+        }
+        else
+        {
+            currentWeapon++;
+        }
     }
 }
