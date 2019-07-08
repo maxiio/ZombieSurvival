@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private void Start() {
+        print("initial hit points: " + hitPoints);
+    }
     [SerializeField] float hitPoints = 100f;
 
     public void TakeDamage(float damageAmmount) {

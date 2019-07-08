@@ -12,7 +12,6 @@ public class GameEnemyAI : MonoBehaviour
     [SerializeField] float chaseRange = 5.0f;
 
     bool isProvoked = false;
-    bool isAttacking = false;
 
     NavMeshAgent navMeshAgent;
     
@@ -64,13 +63,11 @@ public class GameEnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
-        isAttacking = true;
         GetComponent<Animator>().SetBool("attack", true);
     }
 
     private void ChaseTarget()
     {
-        isAttacking = false;
         GetComponent<Animator>().SetBool("attack", false);
         GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);

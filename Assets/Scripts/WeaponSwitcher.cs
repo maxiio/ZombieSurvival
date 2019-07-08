@@ -52,7 +52,7 @@ public class WeaponSwitcher : MonoBehaviour
         //todo: make this a circular buffer
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            currentWeapon = 0;
+            currentWeapon = 0; //Shotgun
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
