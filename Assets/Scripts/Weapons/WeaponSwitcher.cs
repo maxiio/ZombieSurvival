@@ -57,7 +57,6 @@ public class WeaponSwitcher : MonoBehaviour
                 SetActiveWeapon();
             }
         }
-
     }
 
     private void ProcessKeyInput()

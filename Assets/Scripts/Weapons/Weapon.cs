@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float recoilDelay = .025f;
 
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
 
     bool canShoot = true;
 
@@ -43,8 +44,8 @@ public class Weapon : MonoBehaviour
     IEnumerator FireWeapon()
     {
         canShoot = false;
-        Debug.Log("ammo count = " + ammoSlot.GetAmmoCount());
-        if (ammoSlot.GetAmmoCount() > 0)
+        Debug.Log("ammo count = " + ammoSlot.GetAmmoCount(ammoType));
+        if (ammoSlot.GetAmmoCount(ammoType) > 0)
         {
             StartFiringSequence();
         }
@@ -56,7 +57,7 @@ public class Weapon : MonoBehaviour
     {
         PlayMuzzleFlash();
         ProcessRaycast();
-        ammoSlot.ReduceAmmo();
+        ammoSlot.ReduceAmmo(ammoType);
         Invoke("AddRecoil", recoilDelay);
         RemoveRecoil();
     }
