@@ -507,7 +507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe73fe28a9ded448d8d2d6e8068e4ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: 0
+  currentWeapon: 1
+  isZoomed: 0
 --- !u!114 &3458130004498842284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +550,8 @@ MonoBehaviour:
   zoomOutSensitivity: 2
   zoomInSensitivity: 0.5
   fpsCamera: {fileID: 2605663799872443564}
+  currentWeapon: {fileID: 3458130004498842284}
+  switcher: {fileID: 7712462445384636052}
   fpsController: {fileID: 2605663799877739368}
 --- !u!114 &253161199942579913
 MonoBehaviour:
@@ -591,6 +594,8 @@ MonoBehaviour:
   zoomOutSensitivity: 2
   zoomInSensitivity: 0.5
   fpsCamera: {fileID: 2605663799872443564}
+  currentWeapon: {fileID: 253161199942579913}
+  switcher: {fileID: 7712462445384636052}
   fpsController: {fileID: 2605663799877739368}
 --- !u!114 &4946599779230072705
 MonoBehaviour:
@@ -609,6 +614,8 @@ MonoBehaviour:
   zoomOutSensitivity: 2
   zoomInSensitivity: 0.5
   fpsCamera: {fileID: 2605663799872443564}
+  currentWeapon: {fileID: 6995301526813804012}
+  switcher: {fileID: 7712462445384636052}
   fpsController: {fileID: 2605663799877739368}
 --- !u!114 &6995301526813804012
 MonoBehaviour:

@@ -13,9 +13,9 @@ public class WeaponZoomer : MonoBehaviour
 
     [SerializeField] Camera fpsCamera;
     [SerializeField] Weapon currentWeapon;
+    [SerializeField] WeaponSwitcher switcher;
 
     [SerializeField] RigidbodyFirstPersonController fpsController;
-    
     
 
     bool ZoomedInSwitch = false;
@@ -28,6 +28,7 @@ public class WeaponZoomer : MonoBehaviour
             if (ZoomedInSwitch == false)
             {
                 ZoomedInSwitch = true;
+                switcher.SetIsZoomed(true);
                 ToggleWeaponVisibility(false);
                 fpsCamera.fieldOfView = zoomInFOV;
                 fpsController.mouseLook.XSensitivity = zoomInSensitivity;
@@ -36,6 +37,7 @@ public class WeaponZoomer : MonoBehaviour
             else 
             {
                 ZoomedInSwitch = false;
+                switcher.SetIsZoomed(false);
                 ToggleWeaponVisibility(true);
                 fpsCamera.fieldOfView = zoomOutFOV;
                 fpsController.mouseLook.XSensitivity = zoomOutSensitivity;

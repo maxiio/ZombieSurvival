@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-
-//todo: disable switching weapons when zoomed in, or kill zoom and switch weapons?
-
     [SerializeField] int currentWeapon = 0;
+    public bool isZoomed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,17 +32,24 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
+    public void SetIsZoomed(bool zoomed)
+    {
+        isZoomed = zoomed;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        int previousWeapon = currentWeapon;
-
-        ProcessKeyInput();
-        ProcessScrollWheel();
-
-        if (previousWeapon != currentWeapon)
+        if (isZoomed == false)
         {
-            SetActiveWeapon();
+            int previousWeapon = currentWeapon;
+            ProcessKeyInput();
+            ProcessScrollWheel();
+
+            if (previousWeapon != currentWeapon)
+            {
+                SetActiveWeapon();
+            }
         }
 
     }
