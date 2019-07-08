@@ -20,16 +20,22 @@ public class WeaponSwitcher : MonoBehaviour
 
         foreach (Transform weapon in transform)
         {
-            if (weaponIndex == currentWeapon)
-            {
-                weapon.gameObject.SetActive(true);
-            } 
-            else 
-            {
-                weapon.gameObject.SetActive(false);
-            }
-            weaponIndex++;
+            weaponIndex = SwapWeapon(weaponIndex, weapon);
         }
+    }
+
+    private int SwapWeapon(int weaponIndex, Transform weapon)
+    {
+        if (weaponIndex == currentWeapon)
+        {
+            weapon.gameObject.SetActive(true);
+        }
+        else
+        {
+            weapon.gameObject.SetActive(false);
+        }
+        weaponIndex++;
+        return weaponIndex;
     }
 
     public void SetIsZoomed(bool zoomed)
