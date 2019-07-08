@@ -25,13 +25,10 @@ public class WeaponZoomer : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1)) 
         {
-            if (ZoomedInSwitch == false) 
+            if (ZoomedInSwitch == false)
             {
                 ZoomedInSwitch = true;
-                // currentWeapon.GetComponent<Renderer>().enabled = false;
-                foreach (Transform child in currentWeapon.transform) {
-                    child.GetComponent<Renderer>().enabled = false;
-                }
+                ToggleWeaponVisibility(false);
                 fpsCamera.fieldOfView = zoomInFOV;
                 fpsController.mouseLook.XSensitivity = zoomInSensitivity;
                 fpsController.mouseLook.YSensitivity = zoomInSensitivity;
@@ -39,16 +36,19 @@ public class WeaponZoomer : MonoBehaviour
             else 
             {
                 ZoomedInSwitch = false;
-                
-                // currentWeapon.GetComponent<Renderer>().enabled = true;
-                foreach (Transform child in currentWeapon.transform) {
-                    child.GetComponent<Renderer>().enabled = true;
-                }
-
+                ToggleWeaponVisibility(true);
                 fpsCamera.fieldOfView = zoomOutFOV;
                 fpsController.mouseLook.XSensitivity = zoomOutSensitivity;
                 fpsController.mouseLook.YSensitivity = zoomOutSensitivity;
             }
+        }
+    }
+
+    private void ToggleWeaponVisibility(bool visible)
+    {
+        foreach (Transform child in currentWeapon.transform)
+        {
+            child.GetComponent<Renderer>().enabled = visible;
         }
     }
 }

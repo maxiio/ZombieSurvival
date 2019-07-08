@@ -6,6 +6,8 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
 
+//todo: disable switching weapons when zoomed in, or kill zoom and switch weapons?
+
     [SerializeField] int currentWeapon = 0;
 
     // Start is called before the first frame update
