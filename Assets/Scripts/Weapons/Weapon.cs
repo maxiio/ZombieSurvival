@@ -25,6 +25,9 @@ public class Weapon : MonoBehaviour
 
     bool isRecoil = false;
 
+    private void OnEnable() {
+        canShoot = true; //fix bug where swapping weapons, player could game the system
+    }
     void Update()
     {        
         if (isRecoil) { Recoil(); }

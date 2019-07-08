@@ -83,11 +83,11 @@ public class WeaponSwitcher : MonoBehaviour
 
     private void ProcessScrollWheel()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0) // back
+        if (Input.GetAxis("Mouse ScrollWheel") < 0) // back
         {
             CycleForward();
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0) // fwd
+        if (Input.GetAxis("Mouse ScrollWheel") > 0) // fwd
         {
             CycleBackward();
         }
