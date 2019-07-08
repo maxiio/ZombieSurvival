@@ -27,23 +27,33 @@ public class WeaponZoomer : MonoBehaviour
         {
             if (ZoomedInSwitch == false)
             {
-                ZoomedInSwitch = true;
-                switcher.SetIsZoomed(true);
-                ToggleWeaponVisibility(false);
-                fpsCamera.fieldOfView = zoomInFOV;
-                fpsController.mouseLook.XSensitivity = zoomInSensitivity;
-                fpsController.mouseLook.YSensitivity = zoomInSensitivity;
+                ZoomIn();
             }
-            else 
+            else
             {
-                ZoomedInSwitch = false;
-                switcher.SetIsZoomed(false);
-                ToggleWeaponVisibility(true);
-                fpsCamera.fieldOfView = zoomOutFOV;
-                fpsController.mouseLook.XSensitivity = zoomOutSensitivity;
-                fpsController.mouseLook.YSensitivity = zoomOutSensitivity;
+                ZoomOut();
             }
         }
+    }
+
+    private void ZoomOut()
+    {
+        ZoomedInSwitch = false;
+        switcher.SetIsZoomed(false);
+        ToggleWeaponVisibility(true);
+        fpsCamera.fieldOfView = zoomOutFOV;
+        fpsController.mouseLook.XSensitivity = zoomOutSensitivity;
+        fpsController.mouseLook.YSensitivity = zoomOutSensitivity;
+    }
+
+    private void ZoomIn()
+    {
+        ZoomedInSwitch = true;
+        switcher.SetIsZoomed(true);
+        ToggleWeaponVisibility(false);
+        fpsCamera.fieldOfView = zoomInFOV;
+        fpsController.mouseLook.XSensitivity = zoomInSensitivity;
+        fpsController.mouseLook.YSensitivity = zoomInSensitivity;
     }
 
     private void ToggleWeaponVisibility(bool visible)

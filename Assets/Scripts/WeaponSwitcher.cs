@@ -65,19 +65,19 @@ public class WeaponSwitcher : MonoBehaviour
         //todo: make this a circular buffer
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            currentWeapon = 0; //Shotgun
+            currentWeapon = 0; // Shotgun
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            currentWeapon = 1;
+            currentWeapon = 1; // AK-47
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            currentWeapon = 2;
+            currentWeapon = 2; // Skorpion VZ
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            currentWeapon = 3;
+            currentWeapon = 3; // M4A1 Spomod
         }
     }
 

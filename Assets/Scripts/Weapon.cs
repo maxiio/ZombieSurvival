@@ -41,16 +41,21 @@ public class Weapon : MonoBehaviour
     {
         canShoot = false;
         Debug.Log("ammo count = " + ammoSlot.GetAmmoCount());
-        if (ammoSlot.GetAmmoCount() > 0) {
-            PlayMuzzleFlash();
-            ProcessRaycast();
-            ammoSlot.ReduceAmmo();
-            Invoke("AddRecoil", recoilDelay);
-            RemoveRecoil();
+        if (ammoSlot.GetAmmoCount() > 0)
+        {
+            StartFiringSequence();
         }
         yield return new WaitForSeconds(timeeBetweenShots);
-
         canShoot = true;
+    }
+
+    private void StartFiringSequence()
+    {
+        PlayMuzzleFlash();
+        ProcessRaycast();
+        ammoSlot.ReduceAmmo();
+        Invoke("AddRecoil", recoilDelay);
+        RemoveRecoil();
     }
 
     private void PlayMuzzleFlash()
