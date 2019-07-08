@@ -1465,6 +1465,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 611092961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &624705548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc14eaba31749c3a31721ffd0516d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &630665272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2247,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1694965442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &824009791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc14eaba31749c3a31721ffd0516d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825974389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,7 +2888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1035878500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3984,6 +4008,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1339080462}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1340345049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2605663801246196379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc14eaba31749c3a31721ffd0516d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1366546209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5939,167 +5975,21 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1035878503}
-    - target: {fileID: 9202522832746802523, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: damage
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: timeeBetweenShots
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: weaponRecoil
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDecreaseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6995301526813804012, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: range
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5730149470857719634, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: damage
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: timeeBetweenShots
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: weaponRecoil
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDecreaseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130004498842284, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: range
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843880634028091414, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: damage
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: timeeBetweenShots
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: weaponRecoil
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDecreaseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 253161199942579913, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: range
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307017689883593718, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: damage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: weaponRecoil
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDecreaseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: timeeBetweenShots
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: recoilDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
-        type: 3}
-      propertyPath: range
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063645492, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
-      propertyPath: ammoCount
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 113694709, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 113694711, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
-      propertyPath: m_Intensity
-      value: 0.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 113694711, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7712462445384636052, guid: f3c027e38693f49418861f5db139b0b0,
+    - target: {fileID: 8648521126798414562, guid: f3c027e38693f49418861f5db139b0b0,
         type: 3}
       propertyPath: currentWeapon
-      value: 0
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 824009791}
+    - target: {fileID: 9096016099034358813, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 624705548}
+    - target: {fileID: 4946599779230072705, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 1340345049}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
 --- !u!1001 &4535290532065319927
