@@ -3139,7 +3139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1035878500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6256,7 +6256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2063645492, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
       propertyPath: ammoSlots.Array.data[1].ammoAmmount
-      value: 2
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 2063645492, guid: f3c027e38693f49418861f5db139b0b0, type: 3}
       propertyPath: ammoSlots.Array.data[2].ammoType
