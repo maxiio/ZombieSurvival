@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    bool isDead = false;
+
     private void Start() {
-        print("initial hit points: " + hitPoints);
+
     }
     [SerializeField] float hitPoints = 100f;
 
@@ -15,7 +17,19 @@ public class EnemyHealth : MonoBehaviour
         print("hit points: " + hitPoints);
         if (hitPoints <= 0) {
             print("I is dead...");
-            Destroy(gameObject);
+            Die();
+            //Destroy(gameObject);
         }
+    }
+
+    public bool IsDead() 
+    {
+        return isDead;
+    }
+    private void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        GetComponent<Animator>().SetBool("die", true);
     }
 }

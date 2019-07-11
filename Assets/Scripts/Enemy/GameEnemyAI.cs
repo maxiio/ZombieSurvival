@@ -10,6 +10,7 @@ public class GameEnemyAI : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] float turnSpeed = 5f;
     [SerializeField] float chaseRange = 5.0f;
+    EnemyHealth health;
 
     bool isProvoked = false;
 
@@ -20,10 +21,18 @@ public class GameEnemyAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
+
     }
 
     void Update()
     {
+        if (health.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+            return;
+        }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked) {
             EngageTarget();

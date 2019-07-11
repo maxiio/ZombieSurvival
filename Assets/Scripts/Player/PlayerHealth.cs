@@ -23,9 +23,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmmount) 
     {
-       // Debug.Log("TakeDamage called with " + damageAmmount + " damage");
+        Debug.Log("TakeDamage called with " + damageAmmount + " damage");
         health -= damageAmmount;
-      //  Debug.Log("health now: " + health);
+        Debug.Log("player health now: " + health);
 
         if (health <= 0)
         {
