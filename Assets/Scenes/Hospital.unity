@@ -242,10 +242,10 @@ Terrain:
   serializedVersion: 4
   m_TerrainData: {fileID: 15600000, guid: 5f7ee8a23c77c4d4cb1f49128b525fcf, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 423
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeMaximumFullLODCount: 7286
+  m_DetailObjectDistance: 198
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -1880,6 +1880,16 @@ PrefabInstance:
     - target: {fileID: 2422769219169102804, guid: f3c027e38693f49418861f5db139b0b0,
         type: 3}
       propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605663799872443564, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: far clip plane
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605663799872443564, guid: f3c027e38693f49418861f5db139b0b0,
+        type: 3}
+      propertyPath: m_HDR
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
