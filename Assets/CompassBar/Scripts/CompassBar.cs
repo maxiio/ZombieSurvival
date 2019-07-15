@@ -56,6 +56,7 @@ public class CompassBar : MonoBehaviour
             _row.GetComponent<RectTransform>().anchoredPosition = v;
 
 
+            
 
             if (_degree == 360)
             {//Cardinal Direction - N
@@ -123,7 +124,7 @@ public class CompassBar : MonoBehaviour
 
         group0RectTransform = _group0.GetComponent<RectTransform>();
         group1RectTransform = _group1.GetComponent<RectTransform>();
-
+        
         trackObject = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
         trackObject.gameObject.name = "CompassBarTracker";
 
@@ -174,12 +175,14 @@ public class CompassBar : MonoBehaviour
         {
             if (group0RectTransform.position.x < background.position.x && isSlidingToLeft)
             {//Solda. Sağ tarafa ışınla
+            //On the left. Beam to the right
                 Vector3 v = group0RectTransform.anchoredPosition;
                 v.x = group1RectTransform.anchoredPosition.x + groupWidth + DistanceBetweenTwoRow;
                 group0RectTransform.anchoredPosition = v;
             }
             else if (group0RectTransform.position.x > background.position.x && !isSlidingToLeft)
             {//Sağda. Sol tarafa ışınla
+            //On the right. Beam to the left
                 Vector3 v = group0RectTransform.anchoredPosition;
                 v.x = group1RectTransform.anchoredPosition.x - groupWidth - DistanceBetweenTwoRow;
                 group0RectTransform.anchoredPosition = v;

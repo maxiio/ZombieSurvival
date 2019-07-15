@@ -154,11 +154,13 @@ namespace ToJ
 		{
 			if (_maskedSpriteWorldCoordsShader == null)
 			{
-				_maskedSpriteWorldCoordsShader = Shader.Find("Alpha Masked/Sprites Alpha Masked - World Coords");
+				//_maskedSpriteWorldCoordsShader = Shader.Find("Alpha Masked/Sprites Alpha Masked - World Coords");
+				_maskedSpriteWorldCoordsShader = Shader.Find("UI/Unlit/Transparent");
 			}
 			if (_maskedUnlitWorldCoordsShader == null)
 			{
-				_maskedUnlitWorldCoordsShader = Shader.Find("Alpha Masked/Unlit Alpha Masked - World Coords");
+				_maskedUnlitWorldCoordsShader = Shader.Find("UI/Unlit/Transparent");
+				//_maskedUnlitWorldCoordsShader = Shader.Find("Alpha Masked/Unlit Alpha Masked - World Coords");
 			}
 
 			if ((_maskedSpriteWorldCoordsShader == null) || (_maskedUnlitWorldCoordsShader == null))

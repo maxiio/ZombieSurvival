@@ -9,6 +9,8 @@ public class Row : MonoBehaviour
     public Image LineImage;
     public Text DirectionText;
 
+	public Image WaypointImage;
+
 	private void Start () 
 	{
 	
