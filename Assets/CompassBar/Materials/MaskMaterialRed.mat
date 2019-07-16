@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaskMaterial
+  m_Name: MaskMaterialRed
   m_Shader: {fileID: 4800000, guid: 728c0e664f8bc78468d36dcb0c49f8d5, type: 3}
   m_ShaderKeywords: _AXIS_Z _CLAMPHORIZ_ON _CLAMPVERT_ON _SCREEN_SPACE_UI
   m_LightmapFlags: 4
@@ -85,5 +85,5 @@ Material:
     - _UseAlphaChannel: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
