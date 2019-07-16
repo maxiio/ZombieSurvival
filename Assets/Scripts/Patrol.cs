@@ -19,15 +19,11 @@
             // between points (ie, the agent doesn't slow down as it
             // approaches a destination point).
             agent.autoBraking = false;
-
-            Debug.Log(points);
             GotoNextPoint();
         }
 
 
         void GotoNextPoint() {
-            Debug.Log("Going to next point");
-            Debug.Log(points.Length);
 
             // Returns if no points have been set up
             if (points.Length == 0)
