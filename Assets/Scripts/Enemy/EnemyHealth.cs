@@ -22,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    //todoo: ontakedamage notify nearby enemies that player is engaged...
     public bool IsDead() 
     {
         return isDead;
@@ -29,7 +30,10 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         if (isDead) return;
+        //tell patrol to stop
+        GetComponent<Patrol>().StopPatroling();
         isDead = true;
         GetComponent<Animator>().SetBool("die", true);
+
     }
 }

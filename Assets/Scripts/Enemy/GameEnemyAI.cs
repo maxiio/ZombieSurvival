@@ -12,6 +12,8 @@ public class GameEnemyAI : MonoBehaviour
     [SerializeField] float chaseRange = 5.0f;
     EnemyHealth health;
 
+    [SerializeField] float chaseSpeed = 3.5f;
+    [SerializeField] float idleSpeed = 1.0f;
     bool isProvoked = false;
 
     NavMeshAgent navMeshAgent;
@@ -73,6 +75,8 @@ public class GameEnemyAI : MonoBehaviour
     private void AttackTarget()
     {
         GetComponent<Animator>().SetBool("attack", true);
+        navMeshAgent.speed = idleSpeed;
+
     }
 
     private void ChaseTarget()
@@ -80,6 +84,8 @@ public class GameEnemyAI : MonoBehaviour
         GetComponent<Animator>().SetBool("attack", false);
         GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
+        navMeshAgent.speed = chaseSpeed;
+
     }
 
     private void FaceTarget()
