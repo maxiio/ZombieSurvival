@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
  
  public class HoldItems : MonoBehaviour {
- 
- 
      public float speed = 10;
-     public bool canHold = true;
+     public bool canPickup = true;
      public GameObject target;
      public Transform guide;
  
@@ -14,16 +12,15 @@ using UnityEngine;
    {
        if (Input.GetKeyDown(KeyCode.E))
        {
-           if (!canHold)
+           if (!canPickup)
                throw_drop();
            else
                Pickup();
-       }//mause If
+       }
   
-       if (!canHold && target)
+       if (!canPickup && target)
            target.transform.position = guide.position;
-       
-   }//update
+   }
  
      //We can use trigger or Collision
      void OnTriggerEnter(Collider col)
@@ -38,21 +35,21 @@ using UnityEngine;
      {
          if (col.GetComponent<Pickupable>())
          {
-             if (canHold)
+             if (canPickup)
                  target = null;
          }
      }
 
      private void OnCollisionEnter(Collision col) {
          if (col.gameObject.GetComponent<Pickupable>()) {
-             if (!target) // if we don't have anything holding
+             if (!target)
                  target = col.gameObject;
          }
      }
  
     bool CheckIfCloseToObject(float minimumDistance)
     {
-        Pickupable[] pickupableObjects = GameObject.FindObjectsOfType<Pickupable>();//FindGameObjectsWithTag(tag);
+        Pickupable[] pickupableObjects = GameObject.FindObjectsOfType<Pickupable>();
     
         for (int i = 0; i < pickupableObjects.Length; ++i)
         {
@@ -81,16 +78,14 @@ using UnityEngine;
             //We re-position the object on our guide object 
             target.transform.position = guide.position;
     
-            canHold = false;
+            canPickup = false;
         }
-
      }
  
      private void throw_drop()
      {
          if (!target)
              return;
- 
          //Set our Gravity to true again.
         target.GetComponent<Rigidbody>().useGravity = true;
           // we don't have anything to do with our ball field anymore
@@ -98,8 +93,8 @@ using UnityEngine;
          //Apply velocity on throwing
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
  
-        //Unparent our ball
+        //Unparent our target
         guide.GetChild(0).parent = null;
-        canHold = true;
+        canPickup = true;
      }
  }
