@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 945046948166045278}
   - component: {fileID: 945046948166045265}
   - component: {fileID: 945046948166045277}
+  - component: {fileID: 4091822493623635288}
   m_Layer: 0
   m_Name: Ball
   m_TagString: ball
@@ -108,3 +109,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4091822493623635288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945046948166045264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464b0d3ca1fbb43b6b0f1ea4fe1cb96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

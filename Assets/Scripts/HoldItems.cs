@@ -7,7 +7,7 @@ using UnityEngine;
  
      public float speed = 10;
      public bool canHold = true;
-     public GameObject ball;
+     public GameObject target;
      public Transform guide;
  
     void Update()
@@ -20,47 +20,43 @@ using UnityEngine;
                Pickup();
        }//mause If
   
-       if (!canHold && ball)
-           ball.transform.position = guide.position;
+       if (!canHold && target)
+           target.transform.position = guide.position;
        
    }//update
  
      //We can use trigger or Collision
      void OnTriggerEnter(Collider col)
      {
-         Debug.Log("Trigger Entered");
-         if (col.gameObject.tag == "ball")
-         Debug.Log("I hit a thing, it is a ball");
-             if (!ball) // if we don't have anything holding
-                 ball = col.gameObject;
+         if (col.gameObject.GetComponent<Pickupable>())
+             if (!target) // if we don't have anything holding
+                 target = col.gameObject;
      }
  
      //We can use trigger or Collision
      void OnTriggerExit(Collider col)
      {
-         if (col.gameObject.tag == "ball")
+         if (col.GetComponent<Pickupable>())
          {
              if (canHold)
-                 ball = null;
+                 target = null;
          }
      }
 
      private void OnCollisionEnter(Collision col) {
-          Debug.Log("Trigger Entered");
-         if (col.gameObject.tag == "ball") {
-         Debug.Log("I hit a thing, it is a ball");
-             if (!ball) // if we don't have anything holding
-                 ball = col.gameObject;
+         if (col.gameObject.GetComponent<Pickupable>()) {
+             if (!target) // if we don't have anything holding
+                 target = col.gameObject;
          }
      }
  
-    bool CheckCloseToTag(string tag, float minimumDistance)
+    bool CheckIfCloseToObject(float minimumDistance)
     {
-        GameObject[] goWithTag = GameObject.FindGameObjectsWithTag(tag);
+        Pickupable[] pickupableObjects = GameObject.FindObjectsOfType<Pickupable>();//FindGameObjectsWithTag(tag);
     
-        for (int i = 0; i < goWithTag.Length; ++i)
+        for (int i = 0; i < pickupableObjects.Length; ++i)
         {
-            if (Vector3.Distance(transform.position, goWithTag[i].transform.position) <= minimumDistance)
+            if (Vector3.Distance(transform.position, pickupableObjects[i].transform.position) <= minimumDistance)
                 return true;
         }
     
@@ -69,43 +65,41 @@ using UnityEngine;
 
      private void Pickup()
      {
-         if (!ball)
+         if (!target)
              return;
-        Debug.Log("thing trying to pickup is: " + ball.name);
 
-        if (CheckCloseToTag("ball", 2.0f) && ball.tag == "ball")
-
+        if (CheckIfCloseToObject(2.5f) && target.GetComponent<Pickupable>())
         {
-                     //We set the object parent to our guide empty object.
-         ball.transform.SetParent(guide);
- 
-         //Set gravity to false while holding it
-         ball.GetComponent<Rigidbody>().useGravity = false;
- 
-         //we apply the same rotation our main object (Camera) has.
-         ball.transform.localRotation = transform.rotation;
-         //We re-position the ball on our guide object 
-         ball.transform.position = guide.position;
- 
-         canHold = false;
+            //We set the object parent to our guide empty object.
+            target.transform.SetParent(guide);
+    
+            //Set gravity to false while holding it
+            target.GetComponent<Rigidbody>().useGravity = false;
+    
+            //we apply the same rotation our main object (Camera) has.
+            target.transform.localRotation = transform.rotation;
+            //We re-position the object on our guide object 
+            target.transform.position = guide.position;
+    
+            canHold = false;
         }
 
      }
  
      private void throw_drop()
      {
-         if (!ball)
+         if (!target)
              return;
  
          //Set our Gravity to true again.
-         ball.GetComponent<Rigidbody>().useGravity = true;
+        target.GetComponent<Rigidbody>().useGravity = true;
           // we don't have anything to do with our ball field anymore
-          ball = null; 
+        target = null; 
          //Apply velocity on throwing
-         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
  
-         //Unparent our ball
-         guide.GetChild(0).parent = null;
-         canHold = true;
+        //Unparent our ball
+        guide.GetChild(0).parent = null;
+        canHold = true;
      }
  }
