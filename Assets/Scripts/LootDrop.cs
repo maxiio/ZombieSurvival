@@ -19,11 +19,12 @@ public class LootDrop : MonoBehaviour
             // create a new gameobject on the position of the enemy
             GameObject loot = (GameObject)Instantiate(lootObjects[lootNumber], dropPosition, Quaternion.Euler(-90, 0, 0));
             Rigidbody lootRB = loot.GetComponent<Rigidbody>();
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, Random.Range(0, 360), transform.eulerAngles.z);
+            // transform.eulerAngles = new Vector3(transform.eulerAngles.x, Random.Range(0, 360), transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 90, transform.eulerAngles.z);
             float speed = 600;
             lootRB.isKinematic = false;
             Vector3 force = transform.up;
-            force = new Vector3(force.x, 1, force.z);
+            force = new Vector3(force.x, force.y, force.z);
             lootRB.AddForce(force * speed);
 
             Debug.Log("Loot obj to spawn" + loot.name);
