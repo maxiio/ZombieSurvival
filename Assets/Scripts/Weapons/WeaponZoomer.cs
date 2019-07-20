@@ -20,6 +20,9 @@ public class WeaponZoomer : MonoBehaviour
 
     bool ZoomedInSwitch = false;
 
+    private void Start() {
+        ZoomOut();
+    }
     // Update is called once per frame
     void Update()
     {

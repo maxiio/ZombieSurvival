@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!65 &4029968376894553495
 BoxCollider:
@@ -130,11 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130138979880743854}
     m_Modifications:
-    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Shotgun Shell (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954905, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,6 +199,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Shotgun Shell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312944622137954904, guid: 8375fbc3acccb4d178ec3be06caf77cd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954886, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
@@ -3290,11 +3295,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130138979880743854}
     m_Modifications:
-    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Shotgun Shell (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954905, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3364,6 +3364,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Shotgun Shell (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312944622137954904, guid: 8375fbc3acccb4d178ec3be06caf77cd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954886, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+
+    public Transform player;
+
     bool isDead = false;
 
     private void Start() {
