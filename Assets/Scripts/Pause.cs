@@ -28,12 +28,18 @@ public class Pause : MonoBehaviour
         Debug.Log("attempting to pause game.");
         pausePanel.SetActive(true);
         Time.timeScale = 0;
+        FindObjectOfType<WeaponSwitcher>().enabled  = false;
+        FindObjectOfType<Weapon>().enabled  = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         //Disable scripts that still work while timescale is set to 0
     } 
     private void ContinueGame()
     {
         Debug.Log("attempting to continue game.");
         Time.timeScale = 1;
+        FindObjectOfType<WeaponSwitcher>().enabled  = true;
+        FindObjectOfType<Weapon>().enabled  = true;
         pausePanel.SetActive(false);
         //enable the scripts again
     }
