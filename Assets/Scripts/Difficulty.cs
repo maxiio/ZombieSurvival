@@ -12,15 +12,15 @@ using UnityEngine.UI;
 
 public class Difficulty : MonoBehaviour
 {
-    public Button m_YourFirstButton, m_YourSecondButton, m_YourThirdButton, saveButton;
+    public Button easyButton, mediumButton, hardButton, saveButton;
 
     DifficultyLevel difficulty;
 
     void Start()
     {
-        m_YourThirdButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Hard));
-        m_YourSecondButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Medium));
-        m_YourFirstButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Easy));
+        hardButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Hard));
+        mediumButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Medium));
+        easyButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Easy));
         saveButton.onClick.AddListener(ClickSave);
         GetDifficulty();
         Debug.Log(difficulty);
