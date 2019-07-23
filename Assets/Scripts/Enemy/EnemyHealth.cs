@@ -25,6 +25,18 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void SetDifficulty(DifficultyLevel level) {
+        if (level == DifficultyLevel.Easy)
+        {
+            hitPoints = hitPoints * .8f;
+        }
+        if (level == DifficultyLevel.Hard)
+        {
+            hitPoints = hitPoints * 1.8f;
+        }
+        Debug.Log("Difficulty set to " + level + " my hitpoints are now " + hitPoints);
+    }
+
     //todoo: ontakedamage notify nearby enemies that player is engaged...
     public bool IsDead() 
     {

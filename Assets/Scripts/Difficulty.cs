@@ -14,12 +14,7 @@ public class Difficulty : MonoBehaviour
     //Make sure to attach these Buttons in the Inspector
     public Button m_YourFirstButton, m_YourSecondButton, m_YourThirdButton;
 
-    enum DifficultyLevel
-    {
-        Easy = 0,
-        Medium = 1,
-        Hard = 2
-    }
+
     void Start()
     {
         //Calls the TaskOnClick/TaskWithParameters/ButtonClicked method when you click the Button
@@ -46,6 +41,11 @@ public class Difficulty : MonoBehaviour
     void SetDifficulty(DifficultyLevel level) 
     {
         Debug.Log(level);
+        EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
+        foreach (EnemyHealth enemy in enemies)
+        {
+            enemy.SetDifficulty(level);
+        }
     }
     void ButtonClicked(int buttonNo)
     {
