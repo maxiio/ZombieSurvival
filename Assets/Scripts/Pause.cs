@@ -5,9 +5,18 @@ using UnityEngine;
 public class Pause : MonoBehaviour 
 {
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private AppStartup startupObject;
+    private Difficulty difficulty;
     void Start()
     {
-        pausePanel.SetActive(false);
+        // start game, see if difficulty is set
+        if (startupObject) {
+            Destroy(startupObject);
+            PauseGame();
+
+        } else {
+            pausePanel.SetActive(false);
+        }
     }
     void Update()
     {
@@ -19,7 +28,7 @@ public class Pause : MonoBehaviour
                 PauseGame();
             } else if (pausePanel.activeInHierarchy) 
             {
-                 ContinueGame();   
+                ContinueGame();   
             }
         } 
      }
@@ -34,7 +43,7 @@ public class Pause : MonoBehaviour
         Cursor.visible = true;
         //Disable scripts that still work while timescale is set to 0
     } 
-    private void ContinueGame()
+    public void ContinueGame()
     {
         Debug.Log("attempting to continue game.");
         Time.timeScale = 1;

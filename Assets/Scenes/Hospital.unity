@@ -860,7 +860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SAVE
+  m_Text: DONE
 --- !u!222 &147617164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1039,6 +1039,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d07de8b44d99e4f7cba258f7212adf95, type: 3}
+--- !u!1 &177952053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177952055}
+  - component: {fileID: 177952054}
+  m_Layer: 0
+  m_Name: Startup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &177952054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177952053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6e3c54bcfe7470cbc43e19b1d8620e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &177952055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177952053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 102.82541, y: 28.718391, z: 197.4831}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182307662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: f4079ec0fd4e7a44ea385d36caa087dd,
@@ -3573,6 +3616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1081313661}
+  startupObject: {fileID: 177952054}
 --- !u!1001 &593685490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3969,9 +4013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163558430947c9441948b3f8e9a4d2b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_YourFirstButton: {fileID: 269320077}
-  m_YourSecondButton: {fileID: 909657298}
-  m_YourThirdButton: {fileID: 553929479}
+  easyButton: {fileID: 269320077}
+  mediumButton: {fileID: 909657298}
+  hardButton: {fileID: 553929479}
   saveButton: {fileID: 1154878967}
 --- !u!1 &647990383
 GameObject:

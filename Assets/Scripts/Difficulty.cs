@@ -13,6 +13,9 @@ using UnityEngine.UI;
 public class Difficulty : MonoBehaviour
 {
     public Button easyButton, mediumButton, hardButton, saveButton;
+    [SerializeField] Pause pauseMenu;
+
+    bool gameJustStarted = true;
 
     DifficultyLevel difficulty;
 
@@ -26,14 +29,20 @@ public class Difficulty : MonoBehaviour
         Debug.Log(difficulty);
     }
 
-    private void GetDifficulty()
+    public DifficultyLevel GetDifficulty()
     {
         difficulty = (DifficultyLevel)PlayerPrefs.GetInt("difficulty", 1);
+        return difficulty;
     }
 
     void ClickSave()
     {
         PlayerPrefs.Save();
+        if (gameJustStarted) //else manually hit escape  again to return to game, this is confising on launch
+        {   
+            gameJustStarted = false;
+            pauseMenu.ContinueGame();
+        }
     }
 
     void SetDifficulty(DifficultyLevel level) 
@@ -47,7 +56,7 @@ public class Difficulty : MonoBehaviour
 
         int l = (int)level;
         PlayerPrefs.SetInt("difficulty", l);
-        Debug.Log((DifficultyLevel)PlayerPrefs.GetInt("difficulty", 1));
+        Debug.Log((DifficultyLevel)PlayerPrefs.GetInt("difficulty"));
     }
 
 
