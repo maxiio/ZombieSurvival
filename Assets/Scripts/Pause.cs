@@ -5,15 +5,15 @@ using UnityEngine;
 public class Pause : MonoBehaviour 
 {
     [SerializeField] private GameObject pausePanel;
-    [SerializeField] private AppStartup startupObject;
+    //[SerializeField] private AppStartup startupObject;
     private Difficulty difficulty;
     void Start()
     {
+        AppStartup startupObject = FindObjectOfType<AppStartup>();
         // start game, see if difficulty is set
         if (startupObject) {
-            Destroy(startupObject);
+            Destroy(startupObject, 1);
             PauseGame();
-
         } else {
             pausePanel.SetActive(false);
         }
