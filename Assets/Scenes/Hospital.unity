@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.91
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 51b74d7bad397457d883c5940f7664d8, type: 2}
@@ -34,11 +34,11 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.534
+  m_ReflectionBounces: 2
+  m_ReflectionIntensity: 0.381
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1473868213}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.534}
+  m_IndirectSpecularColor: {r: 0.044130154, g: 0.061298594, b: 0.08468748, a: 0.381}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,7 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-  m_LightingDataAsset: {fileID: 112000000, guid: d01fdedeeef7a954699cf39e3b9ea735,
+  m_LightingDataAsset: {fileID: 112000000, guid: 49a1ece8b653d4aef98c76a5f8103c83,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -4017,6 +4017,7 @@ MonoBehaviour:
   mediumButton: {fileID: 909657298}
   hardButton: {fileID: 553929479}
   saveButton: {fileID: 1154878967}
+  pauseMenu: {fileID: 582254849}
 --- !u!1 &647990383
 GameObject:
   m_ObjectHideFlags: 0
@@ -7633,8 +7634,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.4764151, g: 0.65572506, b: 1, a: 1}
+  m_Intensity: 2.54
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
