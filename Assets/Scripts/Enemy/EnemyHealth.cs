@@ -47,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
         //tell patrol to stop
         GetComponent<Patrol>().StopPatroling();
-        GetComponent<Rigidbody>().isKinematic = true;
+//        GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<LootDrop>().DropLoot(gameObject.transform.position);
         isDead = true;
         GetComponent<Animator>().SetBool("die", true);

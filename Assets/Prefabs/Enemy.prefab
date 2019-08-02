@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 1203818445}
   - component: {fileID: 517668414}
   - component: {fileID: 517423}
-  - component: {fileID: 3293224357624551382}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -210,22 +209,6 @@ MonoBehaviour:
   - {fileID: 2845817820636560218, guid: 2f182682470734d40a15e3bf537fdd02, type: 3}
   - {fileID: 2745897875646318612, guid: b59d7dfdf0b394a6cb137a3a1a1e0416, type: 3}
   chance: 100
---- !u!54 &3293224357624551382
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4535290531964322265}
-  serializedVersion: 2
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1033869634415806015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,6 +216,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4535290531964322244}
     m_Modifications:
+    - target: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
     - target: {fileID: 4846736819855508, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -276,10 +263,6 @@ PrefabInstance:
     - target: {fileID: 4846736819855508, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
-      propertyPath: m_Name
-      value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 4209205178343066, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalRotation.y
