@@ -47,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
         //tell patrol to stop
         GetComponent<Patrol>().StopPatroling();
-//        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<LootDrop>().DropLoot(gameObject.transform.position);
         isDead = true;
         GetComponent<MiniMapComponent>().TurnOffTracking();
