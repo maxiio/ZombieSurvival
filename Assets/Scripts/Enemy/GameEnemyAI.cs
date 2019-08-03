@@ -75,7 +75,6 @@ public class GameEnemyAI : MonoBehaviour
     private void AttackTarget()
     {
         GetComponent<Animator>().SetBool("attack", true);
-        GetComponent<EnemySounds>().PlayZombieAttack();
         navMeshAgent.speed = idleSpeed;
     }
 

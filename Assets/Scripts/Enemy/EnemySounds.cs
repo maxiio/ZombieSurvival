@@ -5,20 +5,17 @@ using UnityEngine;
 public class EnemySounds : MonoBehaviour
 {
     AudioSource zombieAudioSource;
-    [SerializeField] AudioClip zombieAttackClip;
-    [SerializeField] AudioClip zombieChaseClip;
+    [SerializeField] AudioClip[] zombieAttackClips;
 
     [SerializeField] AudioCounter audioCounter;
 
     [SerializeField] float zombieAttackBuffer = 3.0f;
 
-/// <summary>
-/// Start is called on the frame when a script is enabled just before
-/// any of the Update methods is called the first time.
-/// </summary>
 void Start()
 {
     zombieAudioSource = GetComponent<AudioSource>();
+    audioCounter.setLastZombieNoise(Time.time);
+
 }
     public void PlayZombieAttack()
     {
@@ -26,20 +23,15 @@ void Start()
         if (currentTime - audioCounter.lastZombieNoise >= zombieAttackBuffer || audioCounter.lastZombieNoise == 0)
         {
             //if longer than buffer, play the sound
-            if (!zombieAudioSource.isPlaying && zombieAudioSource.clip.loadState == AudioDataLoadState.Loaded)
+            if (!zombieAudioSource.isPlaying)
             {
-                zombieAudioSource.PlayOneShot(zombieAttackClip);
+                System.Random random = new System.Random();
+                int randomClipIndex = random.Next(0, zombieAttackClips.Length);
+                zombieAudioSource.clip = zombieAttackClips[randomClipIndex];
+                zombieAudioSource.PlayOneShot(zombieAttackClips[randomClipIndex]);
                 audioCounter.setLastZombieNoise(Time.time);
             }
         } 
-    }
- 
-     public void PlayChaseSounds()
-    {
-        // if (!zombieAudioSource.isPlaying && zombieAudioSource.clip.loadState == AudioDataLoadState.Loaded)
-        // {
-        //     zombieAudioSource.PlayOneShot(zombieChaseClip);
-        // }
     }
 
 }
