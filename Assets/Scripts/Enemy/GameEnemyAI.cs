@@ -68,15 +68,15 @@ public class GameEnemyAI : MonoBehaviour
         }
 
         if  (distanceToTarget <= navMeshAgent.stoppingDistance) {
-            AttackTarget();
+            AttackTarget();            
         }
     }
 
     private void AttackTarget()
     {
         GetComponent<Animator>().SetBool("attack", true);
+        GetComponent<EnemySounds>().PlayZombieAttack();
         navMeshAgent.speed = idleSpeed;
-
     }
 
     private void ChaseTarget()

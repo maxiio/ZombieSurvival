@@ -35,8 +35,8 @@ public class FlashlightSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DecraseLightAngle();
-        DecreaseLightIntensity();
+        // DecraseLightAngle();
+        // DecreaseLightIntensity();
     }
 
     public void RestoreLightAngle(float restoreAngle)
