@@ -5,10 +5,15 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    [SerializeField] PlayerHealth target;
+    PlayerHealth target;
     [SerializeField] float damage = 40f;
      
 
+    private void Start() 
+    {
+        target = FindObjectOfType<PlayerHealth>();
+    }
+    
     public void AtttackHitEvent() {
         if (target == null) { return;  }
         target.GetComponent<PlayerHealth>().TakeDamage(damage);

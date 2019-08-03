@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class GameEnemyAI : MonoBehaviour
 {
 
-    [SerializeField] Transform target;
+    Transform target;
     [SerializeField] float turnSpeed = 5f;
     [SerializeField] float chaseRange = 5.0f;
     EnemyHealth health;
@@ -24,7 +24,7 @@ public class GameEnemyAI : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
-
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
 
     void Update()

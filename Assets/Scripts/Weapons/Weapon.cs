@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
 
 public class Weapon : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
 
+    [SerializeField] TextMeshProUGUI ammoText;
+
     bool canShoot = true;
 
     public float maxRecoil = 50f;
@@ -31,6 +35,8 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {        
+        DisplayAmmo();
+        
         if (isRecoil) { Recoil(); }
 
         if (Input.GetMouseButtonDown(0) && canShoot == true)
@@ -39,7 +45,13 @@ public class Weapon : MonoBehaviour
         }
     }
 
-//todo: Make recticle different color if the current weapon is in range
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetAmmoCount(ammoType);
+        ammoText.text = currentAmmo.ToString();
+    }
+
+    //todo: Make recticle different color if the current weapon is in range
 
     IEnumerator FireWeapon()
     {
