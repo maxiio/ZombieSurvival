@@ -50,6 +50,7 @@ public class EnemyHealth : MonoBehaviour
 //        GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<LootDrop>().DropLoot(gameObject.transform.position);
         isDead = true;
+        GetComponent<MiniMapComponent>().TurnOffTracking();
         GetComponent<Animator>().SetBool("die", true);
 
     }

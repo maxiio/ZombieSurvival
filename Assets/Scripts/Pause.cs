@@ -6,7 +6,7 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     //[SerializeField] private AppStartup startupObject;
-    private Difficulty difficulty;
+    private SettingsMenu settingsMenu;
     void Start()
     {
         AppStartup startupObject = FindObjectOfType<AppStartup>();
