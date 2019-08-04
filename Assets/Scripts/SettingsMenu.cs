@@ -12,13 +12,18 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, compassButton;
+    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, compassButton, healthBbarButton, ammoButton;
     [SerializeField] Pause pauseMenu;
+
+    [SerializeField] GameObject healthBar;
     [SerializeField] GameObject minimap;
     [SerializeField] GameObject compass;
+    [SerializeField] GameObject ammo;
 
     public bool minimapEnabled;
+    public bool healthBarEnabled;
     public bool compassEnabled;
+    public bool ammoEnabled;
 
 
     bool gameJustStarted = true;
@@ -28,14 +33,46 @@ public class SettingsMenu : MonoBehaviour
     void Start()
     {
         minimapEnabled = minimap.activeSelf;
+        ammoEnabled = ammo.activeSelf;
         compassEnabled = compass.activeSelf;
+        healthBarEnabled = healthBar.activeSelf;
         hardButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Hard, hardButton));
         mediumButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Medium, mediumButton));
         easyButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Easy, easyButton));
         saveButton.onClick.AddListener(ClickSave);
         miniMapButton.onClick.AddListener(ToggleMinimap);
         compassButton.onClick.AddListener(ToggleCompass);
+        healthBbarButton.onClick.AddListener(ToggleHealthBar);
+        ammoButton.onClick.AddListener(ToggleAmmo);
         GetDifficulty();
+    }
+    private void ToggleAmmo()
+    {
+        ammoEnabled = !ammoEnabled;
+        ammo.SetActive(ammoEnabled);
+        if (ammoEnabled)
+        {
+            ammoButton.GetComponentInChildren<Text>().text = "AMMMO OFF";
+        } 
+        else
+        {
+            ammoButton.GetComponentInChildren<Text>().text = "AMMO ON";
+        }    
+        
+    }
+    private void ToggleHealthBar()
+    {
+        healthBarEnabled = !healthBarEnabled;
+        healthBar.SetActive(healthBarEnabled);
+        if (healthBarEnabled)
+        {
+            healthBbarButton.GetComponentInChildren<Text>().text = "HEALTH BAR OFF";
+        } 
+        else
+        {
+            healthBbarButton.GetComponentInChildren<Text>().text = "HEALTH BAR ON";
+        }    
+        
     }
 
     public DifficultyLevel GetDifficulty()
