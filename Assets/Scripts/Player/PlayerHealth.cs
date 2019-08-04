@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] float health = 100f;
     DeathHandler playerDeath;
+    public Slider HealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("TakeDamage called with " + damageAmmount + " damage");
         health -= damageAmmount;
         Debug.Log("player health now: " + health);
+        HealthBar.value = health;
 
         if (health <= 0)
         {
