@@ -96,7 +96,7 @@ Material:
     m_Colors:
     - _BaseScale: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 0.6839622, b: 0.6839622, a: 1}
-    - _EmissionColor: {r: 0.10847676, g: 0.9622642, b: 0, a: 1}
+    - _EmissionColor: {r: 0.11066625, g: 0.9607843, b: 0, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _SpecColor: {r: 0.1102941, g: 0.10786115, b: 0.10786115, a: 1}

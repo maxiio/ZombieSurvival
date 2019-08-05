@@ -123,8 +123,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.248169, y: 3.0570946, z: 2.7210846}
+  m_Center: {x: 0.40020752, y: 1.3032265, z: -0.8605423}
 --- !u!1001 &2845817819774753939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ammo Glow
+      objectReference: {fileID: 0}
+    - target: {fileID: 237095270208891786, guid: 0988db5ca57b6ed4ca749778f89c3e23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2938738333626158678, guid: 0988db5ca57b6ed4ca749778f89c3e23,
         type: 3}

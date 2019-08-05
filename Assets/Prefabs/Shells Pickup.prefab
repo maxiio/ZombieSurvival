@@ -122,8 +122,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1454163, y: 0.3896227, z: 1}
-  m_Center: {x: 0.07270813, y: 0.30518866, z: 0}
+  m_Size: {x: 1.1454163, y: 0.54516125, z: 0.48643875}
+  m_Center: {x: 0.07270813, y: 0.2806697, z: -0.02153778}
 --- !u!1001 &2130138979369902524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +131,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130138979880743854}
     m_Modifications:
+    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Shotgun Shell (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954905, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,11 +205,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Shotgun Shell (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954904, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
@@ -3296,6 +3296,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130138979880743854}
     m_Modifications:
+    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
+        type: 3}
+      propertyPath: m_Name
+      value: Shotgun Shell (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954905, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3365,11 +3370,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312944622137954884, guid: 8375fbc3acccb4d178ec3be06caf77cd,
-        type: 3}
-      propertyPath: m_Name
-      value: Shotgun Shell (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954904, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
@@ -6400,6 +6400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ammo Glow
+      objectReference: {fileID: 0}
+    - target: {fileID: 237095270208891786, guid: 0988db5ca57b6ed4ca749778f89c3e23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2938738333626158678, guid: 0988db5ca57b6ed4ca749778f89c3e23,
         type: 3}
