@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
 
     bool isDead = false;
 
+    [SerializeField] ZombieCounter counter;
     private void Start() {
 
     }
@@ -52,6 +53,6 @@ public class EnemyHealth : MonoBehaviour
         isDead = true;
         GetComponent<MiniMapComponent>().TurnOffTracking();
         GetComponent<Animator>().SetBool("die", true);
-
+        counter.DecrementEnemies();
     }
 }
