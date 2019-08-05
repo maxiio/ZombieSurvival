@@ -8,7 +8,7 @@ public class DoorOpener : MonoBehaviour
 //  var FallerObject : GameObject; //Implement your Faller game object into this variable in the inspector
 
     private Animator anim;
-
+    bool playedAnimation = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +19,14 @@ public class DoorOpener : MonoBehaviour
         if(other.gameObject.tag == "Player"){
   
             Animator anim  = GetComponent<Animator>();
-              if (null != anim)
+            if (null != anim)
             {
                 // play Bounce but start at a quarter of the way though
-                anim.Play("DoorAnimation", 0, 0);
+                if (other.GetComponent<KeyRing>().HasKey() && playedAnimation == false)
+                {
+                    anim.Play("DoorAnimation", 0, 0);
+                    playedAnimation = true;
+                }
             }
         }
     }

@@ -11,6 +11,10 @@ public class AmmoPickup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<Ammo>().IncreaseAmmo(ammoType, ammoAmmount); 
+            if (ammoType == AmmoType.Key)
+            {
+                other.GetComponent<KeyRing>().StoreKey();
+            }
             Destroy(transform.parent.gameObject);
         }
     }
