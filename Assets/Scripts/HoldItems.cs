@@ -91,10 +91,20 @@ using UnityEngine;
           // we don't have anything to do with our ball field anymore
         target = null; 
          //Apply velocity on throwing
-        guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+          foreach (Transform child in guide.transform) {
+             print("Foreach loop: " + child);
+             child.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+             child.parent = null;
+          }
+        // GameObject obj = guide.GetChild(0).transform.gameObject;
+        // Debug.Log("logging " + obj.GetComponent<Rigidbody>().velocity);
+        // Debug.Log(transform.forward);
+
+        // guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        
  
         //Unparent our target
-        guide.GetChild(0).parent = null;
+        // guide.GetChild(0).parent = null;
         canPickup = true;
      }
  }
