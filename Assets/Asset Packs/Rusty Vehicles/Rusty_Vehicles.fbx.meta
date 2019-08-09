@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b701be3094f3ba54bb698f800bdb7d4b
 ModelImporter:
-  serializedVersion: 25
+  serializedVersion: 26
   internalIDToNameTable:
   - first:
       43: 4300000
@@ -33,7 +33,17 @@ ModelImporter:
   - first:
       43: 4300018
     second: Billy_Wheel2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hillbilly_Material
+    second: {fileID: 2100000, guid: d027c90f6ff9ef84383032fda1ec89c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vehicle_Material
+    second: {fileID: 2100000, guid: 1af71d154ebca2f428cc3fddd7597d1f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -68,12 +78,13 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -84,9 +95,9 @@ ModelImporter:
     meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15.000001
+    secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 4
+    secondaryUVPackMargin: 33
     useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
