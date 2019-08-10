@@ -10,8 +10,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPSCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 10f;
-    [SerializeField] float timeeBetweenShots = 0.5f;
+    [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] AudioClip fireWeaponClip;
     [SerializeField] GameObject hitImpact;
     [SerializeField] float weaponRecoil = 10;
     [SerializeField] float recoilDelay = .025f;
@@ -20,6 +21,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;
 
     [SerializeField] TextMeshProUGUI ammoText;
+
+    AudioSource weaponAudioSource;
 
     bool canShoot = true;
 
@@ -32,6 +35,9 @@ public class Weapon : MonoBehaviour
 
     private void OnEnable() {
         canShoot = true; //fix bug where swapping weapons, player could game the system
+    }
+    private void Start() {
+        weaponAudioSource = GetComponent<AudioSource>();
     }
     void Update()
     {        
@@ -61,17 +67,24 @@ public class Weapon : MonoBehaviour
         {
             StartFiringSequence();
         }
-        yield return new WaitForSeconds(timeeBetweenShots);
+        yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
     }
 
     private void StartFiringSequence()
     {
         PlayMuzzleFlash();
+        PlayWeaponAudio();
         ProcessRaycast();
         ammoSlot.ReduceAmmo(ammoType);
         Invoke("AddRecoil", recoilDelay);
         RemoveRecoil();
+    }
+
+    private void PlayWeaponAudio()
+    {
+        weaponAudioSource.clip = fireWeaponClip;
+        weaponAudioSource.PlayOneShot(fireWeaponClip);
     }
 
     private void PlayMuzzleFlash()
