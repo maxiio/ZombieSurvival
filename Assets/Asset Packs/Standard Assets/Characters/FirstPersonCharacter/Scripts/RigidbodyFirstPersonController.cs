@@ -20,10 +20,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
 
+            public bool canRun = true;
+
+
+
 #if !MOBILE_INPUT
             private bool m_Running;
 #endif
-
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
 	            if (input == Vector2.zero) return;
@@ -33,6 +36,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					CurrentTargetSpeed = StrafeSpeed;
 				}
 				if (input.y < 0)
+
 				{
 					//backwards
 					CurrentTargetSpeed = BackwardSpeed;
@@ -44,7 +48,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					CurrentTargetSpeed = ForwardSpeed;
 				}
 #if !MOBILE_INPUT
-	            if (Input.GetKey(RunKey))
+
+	            if (Input.GetKey(RunKey) && canRun)
 	            {
 		            CurrentTargetSpeed *= RunMultiplier;
 		            m_Running = true;
@@ -80,13 +85,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
 
-
+        public Fatigue fatigueComponent;
         private Rigidbody m_RigidBody;
         private CapsuleCollider m_Capsule;
         private float m_YRotation;
         private Vector3 m_GroundContactNormal;
         private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
-
+        
 
         public Vector3 Velocity
         {
@@ -118,6 +123,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Start()
         {
+            fatigueComponent = GetComponent<Fatigue>();
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
@@ -134,7 +140,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        public void SetFatigue(bool fatigue)
+        {
+            if (fatigue)
+            {
+                movementSettings.CurrentTargetSpeed = movementSettings.ForwardSpeed;
+                movementSettings.canRun = false;
+            } 
+            else 
+            {
+                movementSettings.canRun = true;
+            }
 
+        }
         private void FixedUpdate()
         {
             GroundCheck();
