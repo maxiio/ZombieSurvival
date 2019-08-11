@@ -36,6 +36,21 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public void RestoreHealth(float healthAmmount) 
+    {
+        health += healthAmmount;
+        if (health >= 100.0f)
+        {
+            health = 100.0f;
+        }
+        HealthBar.value = health;
+    }
+
     private void KillPlayer()
     {
         Debug.Log("Player has died");

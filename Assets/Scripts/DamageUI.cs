@@ -34,7 +34,7 @@ public class DamageUI : MonoBehaviour
 
     private int GetRandomSplat()
     {
-        return UnityEngine.Random.Range(0, splatterImages.Length + 1);
+        return UnityEngine.Random.Range(0, splatterImages.Length);
     }
 
     public static IEnumerator FadeImage(Image image, float startAlpha, float endAlpha, float duration)

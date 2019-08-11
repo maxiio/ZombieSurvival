@@ -70,7 +70,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6934545356343001982}
-  - component: {fileID: 4029968376894553495}
   m_Layer: 0
   m_Name: Shells Pickup
   m_TagString: Untagged
@@ -93,19 +92,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4029968376894553495
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2745897875646318612}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1454163, y: 0.54516125, z: 0.48643875}
-  m_Center: {x: 0.07270813, y: 0.2806697, z: -0.02153778}
 --- !u!1001 &2130138979369902524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,11 +173,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312944622137954904, guid: 8375fbc3acccb4d178ec3be06caf77cd,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954886, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}
@@ -3352,11 +3333,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312944622137954904, guid: 8375fbc3acccb4d178ec3be06caf77cd,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6312944622137954886, guid: 8375fbc3acccb4d178ec3be06caf77cd,
         type: 3}

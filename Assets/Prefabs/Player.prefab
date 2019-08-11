@@ -296,6 +296,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     CurrentTargetSpeed: 8
+    canRun: 1
   mouseLook:
     XSensitivity: 20
     YSensitivity: 20
@@ -309,6 +310,7 @@ MonoBehaviour:
     stickToGroundHelperDistance: 0
     slowDownRate: 20
     airControl: 1
+  fatigueComponent: {fileID: 0}
 --- !u!114 &192694681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,6 +1182,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
       propertyPath: m_TagString
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
       propertyPath: m_LocalPosition.x
