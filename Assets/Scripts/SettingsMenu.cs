@@ -1,18 +1,10 @@
-﻿// To use this example, attach this script to an empty GameObject.
-// Create three buttons (Create>UI>Button). Next, select your
-// empty GameObject in the Hierarchy and click and drag each of your
-// Buttons from the Hierarchy to the Your First Button, Your Second Button
-// and Your Third Button fields in the Inspector.
-// Click each Button in Play Mode to output their message to the console.
-// Note that click means press down and then release.
-
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, compassButton, healthBbarButton, ammoButton;
+    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, compassButton, healthBbarButton, ammoButton, quitButton;
     [SerializeField] Pause pauseMenu;
 
     [SerializeField] GameObject healthBar;
@@ -44,6 +36,7 @@ public class SettingsMenu : MonoBehaviour
         compassButton.onClick.AddListener(ToggleCompass);
         healthBbarButton.onClick.AddListener(ToggleHealthBar);
         ammoButton.onClick.AddListener(ToggleAmmo);
+        quitButton.onClick.AddListener(QuitGame);
         GetDifficulty();
     }
     private void ToggleAmmo()
@@ -60,6 +53,13 @@ public class SettingsMenu : MonoBehaviour
         }    
         
     }
+     private void QuitGame()
+    {
+        Debug.Log("I quit...");
+        Time.timeScale = 1;
+        Application.Quit();
+    }
+
     private void ToggleHealthBar()
     {
         healthBarEnabled = !healthBarEnabled;
