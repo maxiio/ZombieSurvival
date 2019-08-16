@@ -15,6 +15,8 @@ public class Fatigue : MonoBehaviour
 
     public Slider FatigueBar;
 
+    public PlayerSounds footsteps;
+
     public RigidbodyFirstPersonController firstPersonController;
 
 
@@ -28,12 +30,10 @@ public class Fatigue : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift)) {
             DecreaseFatigue();
-            Debug.Log(fatigueLevel);
         }
         else if (fatigueLevel <= fatigueLimit)
         {
             IncreaseFatigue();
-            Debug.Log(fatigueLevel);
         }
         FatigueBar.value = fatigueLevel;
         if (fatigueLevel <= .15)
