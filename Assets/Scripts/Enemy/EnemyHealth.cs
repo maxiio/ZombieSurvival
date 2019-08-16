@@ -18,9 +18,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damageAmmount) {
         BroadcastMessage("OnDamageTaken"); //STRING REFERENCE
         hitPoints -= damageAmmount;
-        print("hit points: " + hitPoints);
         if (hitPoints <= 0) {
-            print("I is dead...");
             Die();
             //Destroy(gameObject);
         }
@@ -35,7 +33,6 @@ public class EnemyHealth : MonoBehaviour
         {
             hitPoints = hitPoints * 1.8f;
         }
-        Debug.Log("Difficulty set to " + level + " my hitpoints are now " + hitPoints);
     }
 
     //todoo: ontakedamage notify nearby enemies that player is engaged...

@@ -62,6 +62,20 @@ public class GameEnemyAI : MonoBehaviour
         sounds.PlayZombieAttack();
     }
 
+    public void Provoke()
+    {
+        isProvoked = true;
+    }
+    private void TellOtherEnemies()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10.0f);
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            hitColliders[i].SendMessage("Provoke");
+            i++;
+        }
+    }
     public bool isPlayerVisible() {
         Vector3 direction = target.position - transform.position;
         RaycastHit hit;
@@ -75,6 +89,7 @@ public class GameEnemyAI : MonoBehaviour
     public void OnDamageTaken()
     {
         isProvoked = true;
+        TellOtherEnemies();
     }
     private void EngageTarget()
     {   

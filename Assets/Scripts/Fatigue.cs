@@ -15,8 +15,6 @@ public class Fatigue : MonoBehaviour
 
     public Slider FatigueBar;
 
-    public PlayerSounds footsteps;
-
     public RigidbodyFirstPersonController firstPersonController;
 
 
