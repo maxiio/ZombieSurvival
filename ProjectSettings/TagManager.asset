@@ -10,7 +10,8 @@ TagManager:
   - SecondCamera
   - BulletSpawn
   - LevelPart
-  - Dummie
+  - Ground
+  - Concrete
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
  public class PlayerSounds : MonoBehaviour {
-     public AudioClip walkSound;
+    public AudioClip walkSound;
+    public AudioClip walkConcreteSound;
+
+    AudioClip currentWalkSound;
 
     [SerializeField] AudioClip reloadClip;
     [SerializeField] AudioClip healthPickupClip;
@@ -27,6 +30,17 @@ using UnityEngine;
         GetComponent<AudioSource>().PlayOneShot(healthPickupClip);
     }
 
+    private void OnCollisionEnter(Collision other) {
+
+        if (other.gameObject.tag == "Ground")
+        {
+            currentWalkSound = walkSound;
+        }
+        else if (other.gameObject.tag == "Concrete")
+        {
+            currentWalkSound = walkConcreteSound;
+        }
+    }
     public void SetFootstepsRunning(bool isRunning)
     {
         if (isRunning)
@@ -43,7 +57,7 @@ using UnityEngine;
              || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W)) {
              nextFootstep -= Time.deltaTime;
              if (nextFootstep <= 0) {
-                 GetComponent<AudioSource>().PlayOneShot(walkSound, 0.7f);
+                 GetComponent<AudioSource>().PlayOneShot(currentWalkSound, 0.7f);
                  nextFootstep += footstepDelay;
              }
          }

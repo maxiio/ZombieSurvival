@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 9336596}
   m_Layer: 0
   m_Name: Lair
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 58
@@ -4333,41 +4333,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0126718f6c636164198c902255696f02, type: 3}
---- !u!84 &62776024
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 257
-  m_Height: 257
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &68932713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6358,7 +6323,7 @@ PrefabInstance:
     - target: {fileID: 2057960, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 62776024}
+      objectReference: {fileID: 468667148}
     - target: {fileID: 2057960, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: orthographic size
       value: 45.32
@@ -13668,7 +13633,7 @@ GameObject:
   - component: {fileID: 451564929}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -13963,6 +13928,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1454120835}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &468667148
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 257
+  m_Height: 257
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &470829325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15278,7 +15278,7 @@ GameObject:
   - component: {fileID: 518099388}
   m_Layer: 0
   m_Name: Hallway
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 26
@@ -23885,7 +23885,7 @@ GameObject:
   - component: {fileID: 985475369}
   m_Layer: 0
   m_Name: Main
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 26
@@ -29131,7 +29131,7 @@ GameObject:
   - component: {fileID: 1114917251}
   m_Layer: 0
   m_Name: Foyer Main
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 26
@@ -30280,7 +30280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114917250}
   m_LocalRotation: {x: 0.0000000842937, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.75, y: -2, z: 1.361}
+  m_LocalPosition: {x: -11.75, y: -1.95, z: 1.361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 896652224}
@@ -42096,7 +42096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809734065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.40382, y: 32.85486, z: 258.7312}
+  m_LocalPosition: {x: 76.40382, y: 32.88, z: 258.7312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 518099393}
@@ -44111,6 +44111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSound: {fileID: 8300000, guid: e089e801f1603294aa62876290938dbc, type: 3}
+  walkConcreteSound: {fileID: 8300000, guid: 6550b5f9ee46d5647875e094dbf08f4e, type: 3}
   reloadClip: {fileID: 8300000, guid: d5517e27f29be2440846065f073f328c, type: 3}
   healthPickupClip: {fileID: 8300000, guid: 787dc5c82fb9ba54092942171bbaab6c, type: 3}
   footstepDelayWalking: 0.6
