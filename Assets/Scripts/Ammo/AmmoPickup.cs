@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class AmmoPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player")
         {
+            other.GetComponent<PlayerSounds>().PlayReloadSound();
             other.GetComponent<Ammo>().IncreaseAmmo(ammoType, ammoAmmount); 
             if (ammoType == AmmoType.Key)
             {

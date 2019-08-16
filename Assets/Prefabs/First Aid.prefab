@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4576762735813981868}
-  - component: {fileID: 4576762735321972448}
   m_Layer: 0
   m_Name: Bone_cap
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 4576762735813906494}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4576762735321972448
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4576762735813472394}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.49269104, y: 0.36242294, z: 0.98928833}
-  m_Center: {x: -0.25365448, y: 0.0074825287, z: 0.005355835}
 --- !u!1 &4576762735813658720
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +122,7 @@ GameObject:
   - component: {fileID: 4576762735813574045}
   - component: {fileID: 4576762735813574034}
   m_Layer: 0
-  m_Name: box_med
+  m_Name: First Aid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

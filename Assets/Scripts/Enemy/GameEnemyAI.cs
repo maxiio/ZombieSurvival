@@ -16,6 +16,9 @@ public class GameEnemyAI : MonoBehaviour
     [SerializeField] float soundRange = 5.0f;
 
     [SerializeField] float idleSpeed = 1.0f;
+
+    [SerializeField] float notificationRadius = 10.0f;
+
     bool isProvoked = false;
 
     EnemySounds sounds;
@@ -68,11 +71,14 @@ public class GameEnemyAI : MonoBehaviour
     }
     private void TellOtherEnemies()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10.0f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, notificationRadius);
         int i = 0;
         while (i < hitColliders.Length)
         {
-            hitColliders[i].SendMessage("Provoke");
+            if (hitColliders[i].gameObject.tag == "Enemy")
+            {
+                hitColliders[i].SendMessage("Provoke");
+            }
             i++;
         }
     }

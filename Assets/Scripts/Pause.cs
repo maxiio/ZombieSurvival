@@ -22,7 +22,6 @@ public class Pause : MonoBehaviour
     {
         if(Input.GetKeyDown (KeyCode.Escape)) 
         {
-            Debug.Log("I have pressed escape");
             if (!pausePanel.activeInHierarchy) 
             {
                 PauseGame();
@@ -34,7 +33,6 @@ public class Pause : MonoBehaviour
      }
     private void PauseGame()
     {
-        Debug.Log("attempting to pause game.");
         pausePanel.SetActive(true);
         Time.timeScale = 0;
         FindObjectOfType<WeaponSwitcher>().enabled  = false;
@@ -45,7 +43,6 @@ public class Pause : MonoBehaviour
     } 
     public void ContinueGame()
     {
-        Debug.Log("attempting to continue game.");
         Time.timeScale = 1;
         FindObjectOfType<WeaponSwitcher>().enabled  = true;
         FindObjectOfType<Weapon>().enabled  = true;

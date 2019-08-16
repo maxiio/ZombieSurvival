@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
  public class PlayerSounds : MonoBehaviour {
      public AudioClip walkSound;
+
+    [SerializeField] AudioClip reloadClip;
+    [SerializeField] AudioClip healthPickupClip;
      public float footstepDelayWalking;
      public float footstepDelayRunning;
 
@@ -12,6 +15,16 @@ using UnityEngine;
  
     private void Start() {
         footstepDelay = footstepDelayWalking;
+    }
+
+    public void PlayReloadSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(reloadClip);
+    }
+
+    public void PlayHealthPickupSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(healthPickupClip);
     }
 
     public void SetFootstepsRunning(bool isRunning)
