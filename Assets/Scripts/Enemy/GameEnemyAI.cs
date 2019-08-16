@@ -13,9 +13,14 @@ public class GameEnemyAI : MonoBehaviour
     EnemyHealth health;
 
     [SerializeField] float chaseSpeed = 3.5f;
+    [SerializeField] float soundRange = 5.0f;
+
     [SerializeField] float idleSpeed = 1.0f;
     bool isProvoked = false;
 
+    EnemySounds sounds;
+
+    private bool nearbySoundPlayed = false;
     NavMeshAgent navMeshAgent;
     
     float distanceToTarget = Mathf.Infinity;
@@ -25,6 +30,7 @@ public class GameEnemyAI : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
         target = FindObjectOfType<PlayerHealth>().transform;
+        sounds = GetComponent<EnemySounds>();
     }
 
     void Update()
@@ -36,13 +42,24 @@ public class GameEnemyAI : MonoBehaviour
             return;
         }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
+        if (distanceToTarget <= soundRange && !nearbySoundPlayed)
+        {
+            PlaySounds();
+            nearbySoundPlayed = true;
+        } 
         if (isProvoked) {
             EngageTarget();
-        } else if (distanceToTarget <= chaseRange) {
+        } 
+        else if (distanceToTarget <= chaseRange) {
             if (isPlayerVisible() == true) {
             isProvoked = true;
             }
         }
+    }
+
+    private void PlaySounds()
+    {
+        sounds.PlayZombieAttack();
     }
 
     public bool isPlayerVisible() {

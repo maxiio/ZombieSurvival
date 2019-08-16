@@ -19,6 +19,10 @@ void Start()
 }
     public void PlayZombieAttack()
     {
+        if (zombieAttackClips.Length == 0)
+        {
+            return;
+        }
         float currentTime = Time.time;
         if (currentTime - audioCounter.lastZombieNoise >= zombieAttackBuffer || audioCounter.lastZombieNoise == 0)
         {
