@@ -29,7 +29,7 @@ public class DamageUI : MonoBehaviour
 
         lastSplat = randomNum;
         Image splat = splatterImages[randomNum];
-        StartCoroutine(FadeImage(splat, 1.0f, 0.0f, impactTime));
+        StartCoroutine(FadeImage(splat, .75f, 0.0f, impactTime));
     }
 
     private int GetRandomSplat()

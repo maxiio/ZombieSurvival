@@ -1,13 +1,15 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, healthBbarButton, ammoButton, quitButton;
+    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, healthBarButton, ammoButton, quitButton;
     [SerializeField] Pause pauseMenu;
 
     [SerializeField] GameObject healthBar;
+    [SerializeField] GameObject fatigueBar;
     [SerializeField] GameObject minimap;
     [SerializeField] GameObject ammo;
 
@@ -30,7 +32,7 @@ public class SettingsMenu : MonoBehaviour
         easyButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Easy, easyButton));
         saveButton.onClick.AddListener(ClickSave);
         miniMapButton.onClick.AddListener(ToggleMinimap);
-        healthBbarButton.onClick.AddListener(ToggleHealthBar);
+        healthBarButton.onClick.AddListener(ToggleHealthBar);
         ammoButton.onClick.AddListener(ToggleAmmo);
         quitButton.onClick.AddListener(QuitGame);
         GetDifficulty();
@@ -39,19 +41,9 @@ public class SettingsMenu : MonoBehaviour
     {
         ammoEnabled = !ammoEnabled;
         ammo.SetActive(ammoEnabled);
-        if (ammoEnabled)
-        {
-            ammoButton.GetComponentInChildren<Text>().text = "AMMMO OFF";
-        } 
-        else
-        {
-            ammoButton.GetComponentInChildren<Text>().text = "AMMO ON";
-        }    
-        
     }
      private void QuitGame()
     {
-        Debug.Log("I quit...");
         Time.timeScale = 1;
         Application.Quit();
     }
@@ -60,15 +52,7 @@ public class SettingsMenu : MonoBehaviour
     {
         healthBarEnabled = !healthBarEnabled;
         healthBar.SetActive(healthBarEnabled);
-        if (healthBarEnabled)
-        {
-            healthBbarButton.GetComponentInChildren<Text>().text = "HEALTH BAR OFF";
-        } 
-        else
-        {
-            healthBbarButton.GetComponentInChildren<Text>().text = "HEALTH BAR ON";
-        }    
-        
+        fatigueBar.SetActive(healthBarEnabled);   
     }
 
     public DifficultyLevel GetDifficulty()
@@ -81,14 +65,6 @@ public class SettingsMenu : MonoBehaviour
     {
         minimapEnabled = !minimapEnabled;
         minimap.SetActive(minimapEnabled);
-        if (minimapEnabled)
-        {
-            miniMapButton.GetComponentInChildren<Text>().text = "MAP OFF";
-        } 
-        else
-        {
-            miniMapButton.GetComponentInChildren<Text>().text = "MAP ON";
-        }
     }
 
     void ClickSave()
