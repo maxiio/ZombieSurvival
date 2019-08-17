@@ -4,17 +4,15 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, compassButton, healthBbarButton, ammoButton, quitButton;
+    public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, healthBbarButton, ammoButton, quitButton;
     [SerializeField] Pause pauseMenu;
 
     [SerializeField] GameObject healthBar;
     [SerializeField] GameObject minimap;
-    [SerializeField] GameObject compass;
     [SerializeField] GameObject ammo;
 
     public bool minimapEnabled;
     public bool healthBarEnabled;
-    public bool compassEnabled;
     public bool ammoEnabled;
 
 
@@ -26,14 +24,12 @@ public class SettingsMenu : MonoBehaviour
     {
         minimapEnabled = minimap.activeSelf;
         ammoEnabled = ammo.activeSelf;
-        compassEnabled = compass.activeSelf;
         healthBarEnabled = healthBar.activeSelf;
         hardButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Hard, hardButton));
         mediumButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Medium, mediumButton));
         easyButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Easy, easyButton));
         saveButton.onClick.AddListener(ClickSave);
         miniMapButton.onClick.AddListener(ToggleMinimap);
-        compassButton.onClick.AddListener(ToggleCompass);
         healthBbarButton.onClick.AddListener(ToggleHealthBar);
         ammoButton.onClick.AddListener(ToggleAmmo);
         quitButton.onClick.AddListener(QuitGame);
@@ -95,19 +91,6 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
-    public void ToggleCompass()
-    {
-        compassEnabled = !compassEnabled;
-        compass.SetActive(compassEnabled);
-        if (compassEnabled)
-        {
-            compassButton.GetComponentInChildren<Text>().text = "COMPASS OFF";
-        } 
-        else
-        {
-            compassButton.GetComponentInChildren<Text>().text = "COMPASS ON";
-        }
-    }
     void ClickSave()
     {
         PlayerPrefs.Save();
