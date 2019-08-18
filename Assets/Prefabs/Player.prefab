@@ -238,10 +238,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 17f5513150eef45bbb1283f9801d76a5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.41058308
   m_Height: 1.9280219
   m_Direction: 1
-  m_Center: {x: -0.041952908, y: 0.164011, z: 0.10859847}
+  m_Center: {x: -0.041952908, y: 0.164011, z: -0.0019845963}
 --- !u!114 &2605663799877739368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2605663799872443564}
   movementSettings:
-    ForwardSpeed: 6
+    ForwardSpeed: 10
     BackwardSpeed: 4
     StrafeSpeed: 4
     RunMultiplier: 2
