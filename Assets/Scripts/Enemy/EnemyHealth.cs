@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmmount) {
         BroadcastMessage("OnDamageTaken"); //STRING REFERENCE
-        hitPoints -= damageAmmount;
+        hitPoints -= Random.Range(damageAmmount/2, damageAmmount);
         if (hitPoints <= 0) {
             Die();
             //Destroy(gameObject);

@@ -2291,7 +2291,9 @@ MonoBehaviour:
   turnSpeed: 5
   chaseRange: 10
   chaseSpeed: 4
+  soundRange: 5
   idleSpeed: 3
+  notificationRadius: 10
 --- !u!114 &8921700181265483586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffc3e712dd7c4df3a17c51025362888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 5
 --- !u!114 &646094662171184027
 MonoBehaviour:
   m_ObjectHideFlags: 0

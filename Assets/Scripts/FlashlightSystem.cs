@@ -69,8 +69,13 @@ public class FlashlightSystem : MonoBehaviour
     }
     private void DecreaseLightIntensity()
     {
-            myLight.intensity = newIntensity;
-            newIntensity -= lightDecay * Time.deltaTime;
+            if (myLight.intensity >= minLightIntensity)
+            {
+                myLight.intensity = newIntensity;
+                newIntensity -= lightDecay * Time.deltaTime;
+            }
+
+
     }
 
     private void DecraseLightAngle()

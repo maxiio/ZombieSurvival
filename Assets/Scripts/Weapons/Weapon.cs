@@ -62,7 +62,6 @@ public class Weapon : MonoBehaviour
     IEnumerator FireWeapon()
     {
         canShoot = false;
-        Debug.Log("ammo count = " + ammoSlot.GetAmmoCount(ammoType));
         if (ammoSlot.GetAmmoCount(ammoType) > 0)
         {
             StartFiringSequence();
