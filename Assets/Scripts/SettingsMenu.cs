@@ -73,8 +73,9 @@ public class SettingsMenu : MonoBehaviour
         if (gameJustStarted) //else manually hit escape  again to return to game, this is confising on launch
         {   
             gameJustStarted = false;
-            pauseMenu.ContinueGame();
         }
+        pauseMenu.ContinueGame();
+
     }
 
     void SetDifficulty(DifficultyLevel level, Button button) 
