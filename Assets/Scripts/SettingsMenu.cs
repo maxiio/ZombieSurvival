@@ -6,6 +6,8 @@ using TMPro;
 public class SettingsMenu : MonoBehaviour
 {
     public Button easyButton, mediumButton, hardButton, saveButton, miniMapButton, healthBarButton, ammoButton, quitButton;
+    public TMP_Text healthButtonText, ammoButtonText, miniMapButtonText;
+
     [SerializeField] Pause pauseMenu;
 
     [SerializeField] GameObject healthBar;
@@ -13,7 +15,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] GameObject minimap;
     [SerializeField] GameObject ammo;
 
-    public bool minimapEnabled;
+    public bool miniMapEnabled;
     public bool healthBarEnabled;
     public bool ammoEnabled;
 
@@ -24,7 +26,7 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        minimapEnabled = minimap.activeSelf;
+        miniMapEnabled = minimap.activeSelf;
         ammoEnabled = ammo.activeSelf;
         healthBarEnabled = healthBar.activeSelf;
         hardButton.onClick.AddListener(() => SetDifficulty(DifficultyLevel.Hard, hardButton));
@@ -40,31 +42,49 @@ public class SettingsMenu : MonoBehaviour
     private void ToggleAmmo()
     {
         ammoEnabled = !ammoEnabled;
+        if (ammoEnabled)
+        {
+            ammoButtonText.SetText("HIDE AMMO");
+        }
+        else
+        {
+            ammoButtonText.SetText("SHOW MAP");
+        }
         ammo.SetActive(ammoEnabled);
     }
-     private void QuitGame()
-    {
-        Time.timeScale = 1;
-        Application.Quit();
-    }
+
 
     private void ToggleHealthBar()
     {
         healthBarEnabled = !healthBarEnabled;
+        if (healthBarEnabled)
+        {
+            healthButtonText.SetText("HIDE HEALTH");
+        }
+        else
+        {
+            healthButtonText.SetText("SHOW HEALTH");
+        }
         healthBar.SetActive(healthBarEnabled);
         fatigueBar.SetActive(healthBarEnabled);   
     }
-
+    public void ToggleMinimap()
+    {
+        miniMapEnabled = !miniMapEnabled;
+        if (miniMapEnabled)
+        {
+            miniMapButtonText.SetText("HIDE MAP");
+        }
+        else
+        {
+            miniMapButtonText.SetText("SHOW MAP");
+        }
+        minimap.SetActive(miniMapEnabled);
+    }
     public DifficultyLevel GetDifficulty()
     {
         difficulty = (DifficultyLevel)PlayerPrefs.GetInt("difficulty", 1);
         return difficulty;
-    }
-
-    public void ToggleMinimap()
-    {
-        minimapEnabled = !minimapEnabled;
-        minimap.SetActive(minimapEnabled);
     }
 
     void ClickSave()
@@ -91,4 +111,9 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log((DifficultyLevel)PlayerPrefs.GetInt("difficulty"));
     }
 
+    private void QuitGame()
+    {
+        Time.timeScale = 1;
+        Application.Quit();
+    }
 }
