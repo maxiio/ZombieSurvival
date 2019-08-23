@@ -19,7 +19,7 @@ public class ZombieCountUI : MonoBehaviour
         FindObjectOfType<Weapon>().enabled  = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        zombieCountText.text = zombieCounter.GetRemainingEnemies() + " / " + zombieCounter.GetTotalEnemies();
+        zombieCountText.text = zombieCounter.GetRemainingEnemies() + "/" + zombieCounter.GetTotalEnemies();
         quitButton.onClick.AddListener(QuitGame);
     }
 
