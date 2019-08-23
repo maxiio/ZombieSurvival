@@ -8,6 +8,9 @@ public class DoorOpener : MonoBehaviour
 //  var FallerObject : GameObject; //Implement your Faller game object into this variable in the inspector
 
     private Animator anim;
+    [SerializeField] AudioClip doorOpenClip;
+
+
     bool playedAnimation = false;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,7 @@ public class DoorOpener : MonoBehaviour
                 // play Bounce but start at a quarter of the way though
                 if (other.GetComponent<KeyRing>().HasKey() && playedAnimation == false)
                 {
+                    GetComponent<AudioSource>().PlayOneShot(doorOpenClip);
                     anim.Play("DoorAnimation", 0, 0);
                     playedAnimation = true;
                 }
