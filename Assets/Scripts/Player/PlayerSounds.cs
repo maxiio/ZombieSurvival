@@ -8,6 +8,7 @@ using UnityEngine;
     AudioClip currentWalkSound;
 
     [SerializeField] AudioClip reloadClip;
+    [SerializeField] AudioClip keyPickupSound;
     [SerializeField] AudioClip healthPickupClip;
      public float footstepDelayWalking;
      public float footstepDelayRunning;
@@ -25,6 +26,10 @@ using UnityEngine;
         GetComponent<AudioSource>().PlayOneShot(reloadClip);
     }
 
+    public void PlayKeyPickupSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(keyPickupSound);
+    }
     public void PlayHealthPickupSound()
     {
         GetComponent<AudioSource>().PlayOneShot(healthPickupClip);

@@ -25,6 +25,7 @@ public class ZombieCountUI : MonoBehaviour
 
     private void QuitGame()
     {
+        Debug.Log("Quitting Game");
         Time.timeScale = 1;
         Application.Quit();
     }

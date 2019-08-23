@@ -11,12 +11,17 @@ public class AmmoPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<PlayerSounds>().PlayReloadSound();
-            other.GetComponent<Ammo>().IncreaseAmmo(ammoType, ammoAmmount); 
             if (ammoType == AmmoType.Key)
             {
+                other.GetComponent<PlayerSounds>().PlayKeyPickupSound();
                 other.GetComponent<KeyRing>().StoreKey();
+
+            } 
+            else
+            {
+                other.GetComponent<PlayerSounds>().PlayReloadSound();
             }
+            other.GetComponent<Ammo>().IncreaseAmmo(ammoType, ammoAmmount); 
             Destroy(transform.parent.gameObject);
         }
     }
