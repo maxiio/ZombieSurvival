@@ -5,26 +5,21 @@ using UnityEngine;
 public class LootDrop : MonoBehaviour
 {
     public GameObject[] lootObjects;// objects which can be dropped as loot
-    public GameObject healthPickup, bulletPickup, shellsPickup, player;
+    public GameObject healthPickup, bulletPickup, shellsPickup, batteryPickup, player;
+    [SerializeField] FlashlightSystem flashlight;
 
 
-    public int chance;
+    public int chance = 100;
 
     public void DropLoot(GameObject enemy)
     {
-        //chance = Random.Range(1, 100); // Adds another chance to spawn an item
-        if (chance > 70) // 50% chance
-        {
-            // create a random number
-            int lootNumber = Random.Range(0, lootObjects.Length);
-
-            Vector3 dropPosition = enemy.transform.position;
-
-            float playerHealth = player.GetComponent<PlayerHealth>().GetHealth();
-
-            int bullets = player.GetComponent<Ammo>().GetAmmoCount(AmmoType.Bullets);
-            int shells = player.GetComponent<Ammo>().GetAmmoCount(AmmoType.Shells);
-
+        Vector3 dropPosition = enemy.transform.position;
+        int lootNumber = Random.Range(0, lootObjects.Length);
+        GameObject lootToDrop;
+        float playerHealth = player.GetComponent<PlayerHealth>().GetHealth();
+        int bullets = player.GetComponent<Ammo>().GetAmmoCount(AmmoType.Bullets);
+        int shells = player.GetComponent<Ammo>().GetAmmoCount(AmmoType.Shells);
+         
             /*
             Loot Drop Logic
             Drop the key if it's the boss
@@ -32,28 +27,38 @@ public class LootDrop : MonoBehaviour
             If about to die, drop health, or whichever weapon is lower
              */
 
-            if (enemy.name == "Boss")
+        if (enemy.name == "Boss")
+        {
+            lootToDrop = lootObjects[lootNumber];
+        } 
+        else if (playerHealth < 20)
+        {
+            lootToDrop = healthPickup;
+        }
+        else if (shells <= 2 || bullets <= 4)
+        {
+            if (shells < bullets)
             {
-                Instantiate(lootObjects[lootNumber], dropPosition + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
-            } else if (playerHealth < 20)
+                lootToDrop = shellsPickup;
+            } 
+            else
             {
-                Instantiate(healthPickup, dropPosition + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
-            }
-            else if (shells <= 2 || bullets <= 4)
-            {
-                if (shells < bullets)
-                {
-                    Instantiate(shellsPickup, dropPosition + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
-                } 
-                else
-                {
-                    Instantiate(bulletPickup, dropPosition + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
-                }
-            }
-            else 
-            {
-               Instantiate(lootObjects[lootNumber], dropPosition + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
+                lootToDrop = bulletPickup;
             }
         }
+        else if(flashlight.GetLightIntensity() < 1)
+        {
+            lootToDrop = batteryPickup;
+        }
+        else 
+        {
+            lootToDrop = lootObjects[lootNumber];
+        }
+        
+        InstantiateLoot(lootToDrop, dropPosition);
+    }
+    private void InstantiateLoot(GameObject loot, Vector3 location)
+    {
+        Instantiate(loot, location + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
     }
 }
