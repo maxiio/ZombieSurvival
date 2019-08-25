@@ -8,11 +8,14 @@ public class BatteryPickup : MonoBehaviour
 
     [SerializeField] BatteryLevel myLevel = BatteryLevel.Full;
 
+
     private void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.tag == "Player")
         {
             other.GetComponentInChildren<FlashlightSystem>().ChargeFlashlight(myLevel);
+            PlayerSounds playerSounds = (PlayerSounds)FindObjectOfType(typeof(PlayerSounds));
+            playerSounds.PlayBatteryPickupSound();
             Destroy(gameObject);
         }
     }

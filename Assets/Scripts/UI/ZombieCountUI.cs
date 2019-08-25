@@ -29,9 +29,9 @@ public class ZombieCountUI : MonoBehaviour
         if (totalEnemies - remainingEnemies == 0)
         {
             summaryText.text = tmp + "You eliminated the zombie threat! All hail the Hero of the Lab!";
-        } else if (totalEnemies - remainingEnemies < 4)
+        } else if (totalEnemies - remainingEnemies > 4)
         {
-            summaryText.text = tmp + "You got most of the zombies, I hope we can take care of the rest.";
+            summaryText.text = tmp + "You got most of the zombies, We can take care of the rest.";
         } else
         {
             summaryText.text = tmp + "You survived, but the town was overwhelmed by the zombies you missed.";
