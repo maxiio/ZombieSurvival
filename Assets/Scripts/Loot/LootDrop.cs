@@ -31,7 +31,7 @@ public class LootDrop : MonoBehaviour
         {
             lootToDrop = lootObjects[lootNumber];
         } 
-        else if (playerHealth < 20)
+        else if (playerHealth <= 25)
         {
             lootToDrop = healthPickup;
         }
