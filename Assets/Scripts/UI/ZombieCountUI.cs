@@ -11,12 +11,14 @@ public class ZombieCountUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI zombieCountText;
     [SerializeField] ZombieCounter zombieCounter;
     [SerializeField] TextMeshProUGUI summaryText;
+    [SerializeField] TextMeshProUGUI timeText;
 
     public Button quitButton, replayButton;
 
     // Start is called before the first frame update
     void Start()
     {
+        System.TimeSpan timeElapsed = System.TimeSpan.FromSeconds(Time.time);
         Time.timeScale = 0;
         FindObjectOfType<WeaponSwitcher>().enabled  = false;
         FindObjectOfType<Weapon>().enabled  = false;
@@ -36,6 +38,11 @@ public class ZombieCountUI : MonoBehaviour
         {
             summaryText.text = tmp + "You survived, but the town was overwhelmed by the zombies you missed.";
         }
+        string fmt = @"mm\:ss";
+
+        string str = timeElapsed.ToString(fmt);
+        timeText.SetText(str);
+        
         quitButton.onClick.AddListener(QuitGame);
         replayButton.onClick.AddListener(ReplayGame);
     }
